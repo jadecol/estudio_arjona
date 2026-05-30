@@ -1,498 +1,593 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vivienda Progresiva en Arjona, Turbaco y Cartagena. Empieza con 48m² y crece hasta 200m². Aplica subsidio del gobierno. Convenios con Alcaldías." />
-  <meta name="theme-color" content="#C2610A" />
-  <title>Vivienda Progresiva · Arjona · Turbaco · Cartagena</title>
-
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Próximo proyecto de vivienda en Arjona. Dinos qué quieres y sé el primero en elegir con bono especial."/>
+  <meta name="theme-color" content="#C2610A"/>
+  <title>¿Qué tipo de vivienda quieres? · Proyecto Arjona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
-
 <body>
 
-  <!-- ░░ BARRA SUPERIOR ░░ -->
-  <div class="topbar">
-    <span>✅ 100% Legal</span>
-    <span>📍 15 min de Cartagena</span>
-    <span>🤖 Bot 24/7</span>
-  </div>
+<!-- ░ TOPBAR ░ -->
+<div class="topbar">
+  <span class="pulse-wrap"><span class="pulse-dot"></span> Proyecto en etapa de pre-lanzamiento</span>
+  <span>📍 Arjona · Turbaco · Cartagena</span>
+  <span id="topCounter">🎁 <strong id="spotsLeft">47</strong> cupos fundadores disponibles</span>
+</div>
 
-  <!-- ░░ NAV ░░ -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <span class="logo-mark">AP</span>
-        <span class="logo-text">Arjona<strong>Progresiva</strong></span>
+<!-- ░ NAV ░ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="logo-mark">AP</span>
+      <span class="logo-text">Proyecto <strong>Arjona</strong></span>
+    </a>
+    <div class="nav-right">
+      <a href="https://t.me/TU_BOT_AQUI" target="_blank" class="btn-tg-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
+        Bot 24/7
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <button class="nav-toggle" id="navToggle">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#producto">El proyecto</a></li>
-        <li><a href="#ciudades">Ciudades</a></li>
-        <li><a href="#subsidios">Subsidios</a></li>
-        <li><a href="#tips">Consejos</a></li>
-        <li><a href="#contacto" class="btn-nav">Quiero info</a></li>
-      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- ░░ HERO ░░ -->
-  <section class="hero" id="inicio">
-    <div class="hero-media">
-      <img
-        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format"
-        alt="Proyecto de vivienda"
-        class="hero-img"
-        loading="eager"
-      />
-      <div class="hero-overlay"></div>
+<!-- ░░ HERO — ENCUESTA ░░ -->
+<section class="hero-survey">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=75&auto=format" alt="" aria-hidden="true" class="hero-bg-img"/>
+    <div class="hero-bg-overlay"></div>
+  </div>
+
+  <div class="hero-survey-content">
+    <!-- Badge urgencia -->
+    <div class="urgency-badge animate-in" style="--d:0s">
+      🎁 Regístrate hoy y recibe un <strong>bono de $500.000</strong> para tu cuota inicial
     </div>
 
-    <div class="hero-content">
-      <div class="hero-badge animate-in" style="--d:0s">
-        <span class="pulse-dot"></span> Aplica Subsidio del Gobierno
+    <h1 class="hero-h1 animate-in" style="--d:.08s">
+      Estamos diseñando el proyecto<br/>
+      <em>para ti.</em>
+    </h1>
+    <p class="hero-p animate-in" style="--d:.16s">
+      Dinos qué necesitas, cuánto podrías pagar<br class="br-d"/>
+      y sé el primero en elegir cuando abramos.
+    </p>
+
+    <!-- CONTADOR fundadores -->
+    <div class="founders-bar animate-in" style="--d:.24s">
+      <div class="founders-track">
+        <div class="founders-fill" id="foundersBar"></div>
       </div>
-      <h1 class="hero-title animate-in" style="--d:.1s">
-        Vivienda Progresiva:<br />
-        <em>Empieza con 48m²</em><br />
-        y crece hasta 200m²
-      </h1>
-      <p class="hero-sub animate-in" style="--d:.2s">
-        Arjona · Turbaco · Cerca de Cartagena
-      </p>
-      <div class="hero-pills animate-in" style="--d:.3s">
-        <span class="pill">🏗 Primer piso listo</span>
-        <span class="pill">📈 Amplía cuando quieras</span>
-        <span class="pill">🤝 Convenio Alcaldía</span>
+      <div class="founders-label">
+        <span id="foundersCount">53</span> de 100 cupos fundadores ocupados
       </div>
-      <div class="hero-ctas animate-in" style="--d:.4s">
-        <a href="#contacto" class="btn-primary">Solicitar información</a>
-        <a href="https://t.me/TU_BOT_AQUI" target="_blank" rel="noopener" class="btn-telegram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.03 9.566c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.293 13.69l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.462c.537-.194 1.006.131.526.897z"/></svg>
-          Hablar con el Bot
+    </div>
+
+    <a href="#encuesta" class="btn-start animate-in" style="--d:.32s">
+      Quiero participar y recibir mi bono
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ░░ ENCUESTA INTERACTIVA ░░ -->
+<section class="survey-section" id="encuesta">
+  <div class="survey-container">
+
+    <div class="survey-header">
+      <div class="section-tag">2 minutos · Sin compromiso</div>
+      <h2 class="survey-title">¿Qué necesitas exactamente?</h2>
+      <p class="survey-sub">Selecciona lo que más se ajusta a lo que buscas. No hay respuesta incorrecta.</p>
+    </div>
+
+    <!-- PASO 1: Tipo de propiedad -->
+    <div class="survey-step active" id="step1">
+      <div class="step-label"><span class="step-num">1</span> ¿Qué te gustaría comprar?</div>
+      <div class="options-grid">
+
+        <label class="opt-card" data-val="lote_200">
+          <input type="radio" name="tipo" value="lote_200"/>
+          <div class="opt-visual">
+            <!-- SVG esquema lote 200m² -->
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="180" height="120" rx="4" fill="#FDF3E7" stroke="#C2610A" stroke-width="2"/>
+              <rect x="25" y="20" width="80" height="60" rx="3" fill="#C2610A" opacity=".18" stroke="#C2610A" stroke-width="1.5"/>
+              <rect x="25" y="20" width="80" height="60" rx="3" fill="none" stroke="#C2610A" stroke-width="1.5"/>
+              <!-- casa icono simple -->
+              <polygon points="65,22 90,40 40,40" fill="#C2610A" opacity=".6"/>
+              <rect x="48" y="40" width="34" height="24" fill="#C2610A" opacity=".3"/>
+              <rect x="56" y="48" width="8" height="10" fill="#C2610A" opacity=".6"/>
+              <!-- terreno restante -->
+              <text x="120" y="55" font-size="9" fill="#888" font-family="sans-serif">Jardín /</text>
+              <text x="120" y="66" font-size="9" fill="#888" font-family="sans-serif">ampliación</text>
+              <text x="18" y="100" font-size="10" fill="#C2610A" font-weight="bold" font-family="sans-serif">200 m²</text>
+              <text x="18" y="114" font-size="9" fill="#666" font-family="sans-serif">Solo el lote urbanizado</text>
+            </svg>
+          </div>
+          <div class="opt-body">
+            <strong>Lote de 200 m²</strong>
+            <p>Solo el terreno urbanizado. Construyes tu casa a tu ritmo y como quieras.</p>
+            <div class="opt-price">Desde ~$22M</div>
+          </div>
+          <div class="opt-check">✓</div>
+        </label>
+
+        <label class="opt-card" data-val="lote_800">
+          <input type="radio" name="tipo" value="lote_800"/>
+          <div class="opt-visual">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="180" height="120" rx="4" fill="#FDF3E7" stroke="#8E4208" stroke-width="2"/>
+              <rect x="20" y="18" width="70" height="50" rx="3" fill="#C2610A" opacity=".2" stroke="#C2610A" stroke-width="1.5"/>
+              <polygon points="55,20 76,34 34,34" fill="#C2610A" opacity=".55"/>
+              <rect x="40" y="34" width="30" height="20" fill="#C2610A" opacity=".25"/>
+              <rect x="47" y="40" width="7" height="9" fill="#C2610A" opacity=".5"/>
+              <!-- espacio amplio -->
+              <rect x="98" y="18" width="82" height="50" rx="3" fill="#8E4208" opacity=".07" stroke="#8E4208" stroke-width="1" stroke-dasharray="4,3"/>
+              <rect x="20" y="76" width="160" height="44" rx="3" fill="#8E4208" opacity=".07" stroke="#8E4208" stroke-width="1" stroke-dasharray="4,3"/>
+              <text x="100" y="48" font-size="8.5" fill="#8E4208" font-family="sans-serif">Zona extra</text>
+              <text x="86" y="103" font-size="8.5" fill="#8E4208" font-family="sans-serif">Patio / Segunda vivienda</text>
+              <text x="14" y="132" font-size="10" fill="#8E4208" font-weight="bold" font-family="sans-serif">800 m² · Gran espacio</text>
+            </svg>
+          </div>
+          <div class="opt-body">
+            <strong>Lote de 800 m²</strong>
+            <p>Amplio terreno por norma municipal. Ideal para familia grande o segunda vivienda.</p>
+            <div class="opt-price">Desde ~$80M</div>
+          </div>
+          <div class="opt-check">✓</div>
+        </label>
+
+        <label class="opt-card opt-featured" data-val="vivienda_progresiva">
+          <input type="radio" name="tipo" value="vivienda_progresiva"/>
+          <div class="opt-badge-top">La más solicitada</div>
+          <div class="opt-visual">
+            <!-- Esquema vivienda progresiva 3 etapas -->
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <!-- Etapa 1: 48m² -->
+              <rect x="8" y="45" width="48" height="70" rx="3" fill="#FDF3E7" stroke="#C2610A" stroke-width="1.5"/>
+              <polygon points="32,10 56,45 8,45" fill="#C2610A" opacity=".7"/>
+              <!-- puertas/ventanas -->
+              <rect x="14" y="60" width="10" height="10" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
+              <rect x="32" y="55" width="12" height="22" rx="1" fill="#C2610A" opacity=".4"/>
+              <text x="12" y="128" font-size="7.5" fill="#C2610A" font-weight="bold" font-family="sans-serif">48m² listo</text>
+
+              <!-- Flecha -->
+              <path d="M62 80 L76 80" stroke="#C2610A" stroke-width="1.5" marker-end="url(#arr)"/>
+              <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#C2610A"/></marker></defs>
+
+              <!-- Etapa 2: +dormitorio -->
+              <rect x="80" y="35" width="48" height="80" rx="3" fill="#FDF3E7" stroke="#C2610A" stroke-width="1.5"/>
+              <rect x="80" y="35" width="48" height="30" rx="3" fill="#C2610A" opacity=".1" stroke="#C2610A" stroke-width="1" stroke-dasharray="3,2"/>
+              <polygon points="104,8 128,35 80,35" fill="#C2610A" opacity=".5"/>
+              <rect x="86" y="53" width="10" height="10" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
+              <rect x="103" y="45" width="12" height="22" rx="1" fill="#C2610A" opacity=".35"/>
+              <text x="82" y="128" font-size="7.5" fill="#C2610A" font-weight="bold" font-family="sans-serif">+dormit.</text>
+
+              <!-- Flecha -->
+              <path d="M134 80 L148 80" stroke="#C2610A" stroke-width="1.5" marker-end="url(#arr)"/>
+
+              <!-- Etapa 3: 2 pisos 200m² -->
+              <rect x="152" y="20" width="40" height="95" rx="3" fill="#C2610A" opacity=".15" stroke="#C2610A" stroke-width="2"/>
+              <line x1="152" y1="57" x2="192" y2="57" stroke="#C2610A" stroke-width="1" stroke-dasharray="3,2"/>
+              <rect x="157" y="60" width="8" height="9" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
+              <rect x="170" y="60" width="8" height="9" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
+              <rect x="157" y="25" width="8" height="9" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
+              <rect x="170" y="25" width="8" height="9" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
+              <rect x="163" y="72" width="12" height="20" rx="1" fill="#C2610A" opacity=".45"/>
+              <text x="150" y="128" font-size="7.5" fill="#C2610A" font-weight="bold" font-family="sans-serif">200m² final</text>
+            </svg>
+          </div>
+          <div class="opt-body">
+            <strong>Vivienda Progresiva</strong>
+            <p><em>Empiezas con 48m² listos para vivir y amplías hasta 200m² cuando puedas.</em> La estructura ya viene preparada para el 2° piso.</p>
+            <div class="opt-price">Desde $143M · Aplica subsidio</div>
+          </div>
+          <div class="opt-check">✓</div>
+        </label>
+
+        <label class="opt-card" data-val="casa_terminada">
+          <input type="radio" name="tipo" value="casa_terminada"/>
+          <div class="opt-visual">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <!-- Casa terminada 2 pisos -->
+              <rect x="30" y="30" width="140" height="95" rx="4" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="2"/>
+              <line x1="30" y1="72" x2="170" y2="72" stroke="#1C3557" stroke-width="1.5"/>
+              <!-- piso 2 -->
+              <rect x="40" y="35" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
+              <rect x="74" y="35" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
+              <rect x="108" y="35" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
+              <!-- piso 1 -->
+              <rect x="40" y="77" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
+              <rect x="74" y="77" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
+              <rect x="90" y="80" width="20" height="35" rx="1" fill="#1C3557" opacity=".25"/>
+              <!-- techo -->
+              <polygon points="100,5 175,30 25,30" fill="#1C3557" opacity=".5"/>
+              <text x="38" y="140" font-size="9" fill="#1C3557" font-weight="bold" font-family="sans-serif">Casa lista · 2 pisos · 3 hab.</text>
+            </svg>
+          </div>
+          <div class="opt-body">
+            <strong>Casa terminada</strong>
+            <p>2 pisos completos, 3 habitaciones, 2 baños. Llegas y vives. Sin construcción adicional.</p>
+            <div class="opt-price">Desde $220M</div>
+          </div>
+          <div class="opt-check">✓</div>
+        </label>
+
+      </div>
+      <button class="btn-step-next" id="btn1" disabled onclick="goStep(2)">
+        Continuar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- PASO 2: Capacidad de pago -->
+    <div class="survey-step" id="step2">
+      <button class="btn-back" onclick="goStep(1)">← Volver</button>
+      <div class="step-label"><span class="step-num">2</span> ¿Cuánto podrías pagar al mes por tu vivienda?</div>
+      <p class="step-note">Incluyendo crédito + cuota. Esto nos ayuda a diseñar el plan de pago ideal para ti.</p>
+      <div class="options-list">
+        <label class="opt-list-item" data-val="menos300">
+          <input type="radio" name="pago" value="menos300"/>
+          <div class="oli-icon">💚</div>
+          <div class="oli-body"><strong>Menos de $300.000/mes</strong><p>Busco el plan más económico. Necesito mucha ayuda con el subsidio.</p></div>
+          <div class="oli-check">✓</div>
+        </label>
+        <label class="opt-list-item" data-val="300_600">
+          <input type="radio" name="pago" value="300_600"/>
+          <div class="oli-icon">💛</div>
+          <div class="oli-body"><strong>Entre $300.000 y $600.000/mes</strong><p>Tengo ingresos moderados. Me interesa subsidio + crédito bancario.</p></div>
+          <div class="oli-check">✓</div>
+        </label>
+        <label class="opt-list-item" data-val="600_1000">
+          <input type="radio" name="pago" value="600_1000"/>
+          <div class="oli-icon">🧡</div>
+          <div class="oli-body"><strong>Entre $600.000 y $1.000.000/mes</strong><p>Tengo capacidad de crédito. Quiero la mejor opción de inversión.</p></div>
+          <div class="oli-check">✓</div>
+        </label>
+        <label class="opt-list-item" data-val="mas1000">
+          <input type="radio" name="pago" value="mas1000"/>
+          <div class="oli-icon">❤️</div>
+          <div class="oli-body"><strong>Más de $1.000.000/mes</strong><p>Tengo buen salario. Quiero la mejor ubicación y más espacio.</p></div>
+          <div class="oli-check">✓</div>
+        </label>
+      </div>
+      <button class="btn-step-next" id="btn2" disabled onclick="goStep(3)">
+        Continuar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- PASO 3: Perfil -->
+    <div class="survey-step" id="step3">
+      <button class="btn-back" onclick="goStep(2)">← Volver</button>
+      <div class="step-label"><span class="step-num">3</span> ¿Cuál es tu situación actual?</div>
+      <p class="step-note">Esto nos permite conectarte con los subsidios para los que SÍ clasificas.</p>
+      <div class="options-grid options-grid-3">
+        <label class="opt-card opt-compact" data-val="empleado_oficial">
+          <input type="radio" name="perfil" value="empleado_oficial"/>
+          <div class="opt-icon">🏛</div>
+          <strong>Empleado oficial</strong>
+          <p>Alcaldía, Gobernación, Secretaría, Hospital público</p>
+          <div class="opt-check">✓</div>
+        </label>
+        <label class="opt-card opt-compact" data-val="empleado_empresa">
+          <input type="radio" name="perfil" value="empleado_empresa"/>
+          <div class="opt-icon">💼</div>
+          <strong>Empleado empresa privada</strong>
+          <p>Trabajo con contrato y pago caja de compensación</p>
+          <div class="opt-check">✓</div>
+        </label>
+        <label class="opt-card opt-compact" data-val="independiente">
+          <input type="radio" name="perfil" value="independiente"/>
+          <div class="opt-icon">🛒</div>
+          <strong>Independiente / Comerciante</strong>
+          <p>Tendero, vendedor, trabajo por cuenta propia</p>
+          <div class="opt-check">✓</div>
+        </label>
+        <label class="opt-card opt-compact" data-val="mototaxista">
+          <input type="radio" name="perfil" value="mototaxista"/>
+          <div class="opt-icon">🏍</div>
+          <strong>Mototaxista / Transporte</strong>
+          <p>Ingresos informales pero constantes</p>
+          <div class="opt-check">✓</div>
+        </label>
+        <label class="opt-card opt-compact" data-val="madre_cabeza">
+          <input type="radio" name="perfil" value="madre_cabeza"/>
+          <div class="opt-icon">👩‍👧</div>
+          <strong>Madre / Padre cabeza de hogar</strong>
+          <p>Soy responsable único de mi familia</p>
+          <div class="opt-check">✓</div>
+        </label>
+        <label class="opt-card opt-compact" data-val="otro">
+          <input type="radio" name="perfil" value="otro"/>
+          <div class="opt-icon">✨</div>
+          <strong>Otro perfil</strong>
+          <p>Pensionado, estudiante, inversión, etc.</p>
+          <div class="opt-check">✓</div>
+        </label>
+      </div>
+      <button class="btn-step-next" id="btn3" disabled onclick="goStep(4)">
+        Continuar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- PASO 4: Ciudad + subsidio -->
+    <div class="survey-step" id="step4">
+      <button class="btn-back" onclick="goStep(3)">← Volver</button>
+      <div class="step-label"><span class="step-num">4</span> Un par de datos más</div>
+      <div class="mini-form">
+        <div class="mini-field">
+          <label>¿En qué ciudad buscas tu vivienda?</label>
+          <div class="options-inline">
+            <label class="tag-option" data-val="Arjona"><input type="radio" name="ciudad" value="Arjona"/>📍 Arjona</label>
+            <label class="tag-option" data-val="Turbaco"><input type="radio" name="ciudad" value="Turbaco"/>📍 Turbaco</label>
+            <label class="tag-option" data-val="Cartagena"><input type="radio" name="ciudad" value="Cartagena"/>📍 Cartagena</label>
+            <label class="tag-option" data-val="Cualquiera"><input type="radio" name="ciudad" value="Cualquiera"/>🗺 Cualquiera</label>
+          </div>
+        </div>
+        <div class="mini-field">
+          <label>¿Tienes en mente solicitar el subsidio de vivienda?</label>
+          <div class="options-inline">
+            <label class="tag-option" data-val="si_subsidio"><input type="radio" name="subsidio" value="si_subsidio"/>✅ Sí, me interesa</label>
+            <label class="tag-option" data-val="quiero_saber"><input type="radio" name="subsidio" value="quiero_saber"/>🤔 Quiero aprender cómo</label>
+            <label class="tag-option" data-val="no_subsidio"><input type="radio" name="subsidio" value="no_subsidio"/>❌ No aplico / No me interesa</label>
+          </div>
+        </div>
+        <div class="mini-field">
+          <label>¿Cómo te enteraste de este proyecto?</label>
+          <div class="options-inline">
+            <label class="tag-option" data-val="alcaldia"><input type="radio" name="origen" value="alcaldia"/>🏛 Alcaldía</label>
+            <label class="tag-option" data-val="educacion"><input type="radio" name="origen" value="educacion"/>📚 Sec. Educación</label>
+            <label class="tag-option" data-val="redes"><input type="radio" name="origen" value="redes"/>📱 Redes sociales</label>
+            <label class="tag-option" data-val="amigo"><input type="radio" name="origen" value="amigo"/>👥 Un amigo</label>
+            <label class="tag-option" data-val="telegram"><input type="radio" name="origen" value="telegram"/>✈️ Telegram</label>
+          </div>
+        </div>
+      </div>
+      <button class="btn-step-next" id="btn4" onclick="goStep(5)">
+        Casi listo — registrarme <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- PASO 5: DATOS + BONO FUNDADOR -->
+    <div class="survey-step" id="step5">
+      <button class="btn-back" onclick="goStep(4)">← Volver</button>
+
+      <div class="founder-card">
+        <div class="founder-badge">🎁 Bono Fundador</div>
+        <h3>¡Ya casi tienes tu bono!</h3>
+        <p>Deja tus datos para reservar tu lugar. Los primeros <strong>100 registrados</strong> reciben un bono de <strong>$500.000</strong> para la cuota inicial cuando el proyecto abra.</p>
+        <div class="founder-perks">
+          <div class="perk">🥇 Prioridad para elegir el mejor lote o casa</div>
+          <div class="perk">💰 Bono de $500.000 para cuota inicial</div>
+          <div class="perk">📊 Resultados completos de esta encuesta</div>
+          <div class="perk">📲 Tips diarios de subsidios en Telegram</div>
+        </div>
+      </div>
+
+      <form class="lead-form" id="leadForm" name="contacto" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contacto"/>
+        <input type="hidden" name="bot-field"/>
+        <input type="hidden" name="tipo" id="h_tipo"/>
+        <input type="hidden" name="pago" id="h_pago"/>
+        <input type="hidden" name="perfil" id="h_perfil"/>
+        <input type="hidden" name="ciudad" id="h_ciudad"/>
+        <input type="hidden" name="subsidio" id="h_subsidio"/>
+        <input type="hidden" name="origen" id="h_origen"/>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required autocomplete="name"/>
+          </div>
+        </div>
+        <div class="form-row two">
+          <div class="form-group">
+            <label for="telefono">WhatsApp / Celular *</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="3XX XXX XXXX" required autocomplete="tel"/>
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="tu@correo.com" autocomplete="email"/>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btnSubmit">
+          <span class="btn-text">
+            🎁 Registrarme y recibir mi bono
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+          <span class="btn-loading" style="display:none">Enviando...</span>
+        </button>
+        <p class="form-privacy">🔒 Tus datos son privados. Solo los usaremos para contactarte sobre el proyecto.</p>
+      </form>
+    </div>
+
+    <!-- PASO 6: ÉXITO -->
+    <div class="survey-step success-step" id="step6">
+      <div class="success-anim">🎉</div>
+      <h2>¡Ya eres Fundador!</h2>
+      <p>Quedaste registrado en el grupo de los primeros 100. Te contactaremos cuando abramos con tu <strong>bono de $500.000</strong> listo.</p>
+
+      <div class="success-next">
+        <p>Mientras tanto, únete a nuestro canal de Telegram para recibir:</p>
+        <ul>
+          <li>📌 Tips diarios de subsidios y ahorro</li>
+          <li>📊 Los resultados de esta encuesta</li>
+          <li>🔔 Notificación el día que abramos</li>
+        </ul>
+        <a href="https://t.me/TU_CANAL_AQUI" target="_blank" rel="noopener" class="btn-tg-big">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
+          Unirme al canal de Telegram
         </a>
+        <p class="success-share">¿Conoces a alguien que también busca vivienda?</p>
+        <button class="btn-share" id="btnShare">📤 Compartir este formulario</button>
       </div>
     </div>
 
-    <div class="hero-scroll">
-      <span>Descubre más</span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <!-- Barra de progreso -->
+    <div class="progress-bar-wrap" id="progressWrap">
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-label" id="progressLabel">Paso 1 de 5</span>
     </div>
-  </section>
 
-  <!-- ░░ STATS ░░ -->
-  <section class="stats-bar">
-    <div class="stat">
-      <strong>82</strong><span>familias por beneficiar</span>
-    </div>
-    <div class="stat-div"></div>
-    <div class="stat">
-      <strong>48m²</strong><span>listo para habitar</span>
-    </div>
-    <div class="stat-div"></div>
-    <div class="stat">
-      <strong>200m²</strong><span>potencial de ampliación</span>
-    </div>
-    <div class="stat-div"></div>
-    <div class="stat">
-      <strong>$52M</strong><span>subsidio disponible</span>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ░░ EL PRODUCTO ░░ -->
-  <section class="section section-light" id="producto">
-    <div class="container">
-      <div class="section-tag">El proyecto</div>
-      <h2 class="section-title">Una casa que<br /><em>crece contigo</em></h2>
-      <p class="section-sub">Diseño de dos pisos, construimos el primero. Tú amplías cuando puedas, sin mudarte ni gastar de más.</p>
+<!-- ░░ SECCIÓN: VIVIENDA PROGRESIVA EN DETALLE ░░ -->
+<section class="section section-cream" id="progresiva">
+  <div class="container">
+    <div class="section-tag">¿Cómo funciona?</div>
+    <h2 class="section-title">Vivienda Progresiva:<br/><em>creces cuando tú decides</em></h2>
+    <p class="section-sub">El primer piso está listo para habitar. La estructura ya viene diseñada y preparada para que tú —cuando tengas más dinero— construyas el segundo piso sin costos adicionales de demolición ni rediseño.</p>
 
-      <div class="progress-stages">
-        <div class="stage">
-          <div class="stage-img">
-            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80&auto=format" alt="Casa primer piso" loading="lazy" />
-          </div>
-          <div class="stage-num">01</div>
-          <h3>Entrega inicial</h3>
-          <p>Casa de <strong>48m²</strong> lista para habitar. Sala, comedor, cocina, 2 habitaciones y baño.</p>
-          <div class="stage-price">Desde $143 millones</div>
+    <div class="stages-detail">
+
+      <div class="stage-d">
+        <div class="stage-d-header">
+          <div class="stage-d-num">Etapa 1</div>
+          <div class="stage-d-title">Entrega · Primer piso</div>
+          <div class="stage-d-m2">48 m²</div>
         </div>
-
-        <div class="stage-arrow">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <!-- Plano esquemático -->
+        <div class="floor-plan">
+          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="260" height="180" rx="4" fill="#FAF6F0" stroke="#C2610A" stroke-width="2"/>
+            <!-- sala -->
+            <rect x="18" y="18" width="100" height="80" rx="2" fill="#C2610A" opacity=".08" stroke="#C2610A" stroke-width="1"/>
+            <text x="58" y="62" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif" font-weight="bold">Sala /</text>
+            <text x="58" y="76" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif" font-weight="bold">Comedor</text>
+            <!-- cocina -->
+            <rect x="126" y="18" width="70" height="80" rx="2" fill="#C2610A" opacity=".06" stroke="#C2610A" stroke-width="1"/>
+            <text x="161" y="62" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif">Cocina</text>
+            <!-- hab 1 -->
+            <rect x="18" y="106" width="80" height="76" rx="2" fill="#1C3557" opacity=".07" stroke="#1C3557" stroke-width="1"/>
+            <text x="58" y="148" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Hab. 1</text>
+            <!-- baño -->
+            <rect x="106" y="106" width="50" height="35" rx="2" fill="#1C3557" opacity=".07" stroke="#1C3557" stroke-width="1"/>
+            <text x="131" y="128" text-anchor="middle" font-size="9" fill="#1C3557" font-family="sans-serif">Baño</text>
+            <!-- hab 2 -->
+            <rect x="106" y="148" width="90" height="38" rx="2" fill="#1C3557" opacity=".07" stroke="#1C3557" stroke-width="1"/>
+            <text x="151" y="172" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Hab. 2</text>
+            <!-- espera 2do piso -->
+            <rect x="204" y="18" width="58" height="168" rx="2" fill="#C2610A" opacity=".04" stroke="#C2610A" stroke-width="1" stroke-dasharray="5,3"/>
+            <text x="233" y="95" text-anchor="middle" font-size="9" fill="#C2610A" font-family="sans-serif">Listo</text>
+            <text x="233" y="107" text-anchor="middle" font-size="9" fill="#C2610A" font-family="sans-serif">para</text>
+            <text x="233" y="119" text-anchor="middle" font-size="9" fill="#C2610A" font-family="sans-serif">crecer</text>
+          </svg>
         </div>
-
-        <div class="stage stage-mid">
-          <div class="stage-img">
-            <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80&auto=format" alt="Casa ampliada" loading="lazy" />
-          </div>
-          <div class="stage-num">02</div>
-          <h3>Ampliación</h3>
-          <p>Construyes el segundo piso cuando quieras. La estructura ya está lista para recibirlo.</p>
-          <div class="stage-price">Crece a tu ritmo</div>
-        </div>
-
-        <div class="stage-arrow">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-
-        <div class="stage">
-          <div class="stage-img">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=80&auto=format" alt="Casa terminada" loading="lazy" />
-          </div>
-          <div class="stage-num">03</div>
-          <h3>Casa completa</h3>
-          <p>Hasta <strong>200m²</strong> en dos pisos: 4 habitaciones, 2 baños, terraza y más.</p>
-          <div class="stage-price">Tu hogar ideal</div>
+        <div class="stage-d-info">
+          <div class="stage-d-badge ready">✓ Listo para vivir</div>
+          <ul>
+            <li>Sala · comedor · cocina</li>
+            <li>2 habitaciones · 1 baño</li>
+            <li>Estructura reforzada para 2° piso</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Tipos de lote -->
-      <div class="lots-grid">
-        <div class="lot-card">
-          <div class="lot-icon">🏡</div>
-          <h3>Tipo 1 — 56 unidades</h3>
-          <div class="lot-specs">
-            <span>Lote: <strong>200 m²</strong></span>
-            <span>Casa: <strong>48 m²</strong></span>
-            <span>Precio: <strong>$143.5M</strong></span>
-          </div>
-          <p>Ideal para familias jóvenes. Lote compacto y bien ubicado con opción de ampliación vertical.</p>
-          <div class="lot-badge vis">VIS ✓ — 82 SMMLV</div>
-        </div>
+      <div class="stage-arrow-v">
+        <svg width="24" height="40" viewBox="0 0 24 40"><path d="M12 0v32M5 26l7 7 7-7" stroke="#C2610A" stroke-width="2" fill="none"/></svg>
+        Amplías cuando quieras
+      </div>
 
-        <div class="lot-card lot-card-featured">
-          <div class="lot-badge-top">El más espacioso</div>
-          <div class="lot-icon">🏠</div>
-          <h3>Tipo 2 — 26 unidades</h3>
-          <div class="lot-specs">
-            <span>Lote: <strong>720 m²</strong></span>
-            <span>Casa: <strong>56 m²</strong></span>
-            <span>Precio: <strong>$171.6M</strong></span>
-          </div>
-          <p>Lote amplio por normativa municipal. Espacio para jardín, zona de juegos y futura ampliación.</p>
-          <div class="lot-badge vis">VIS ✓ — 98 SMMLV</div>
+      <div class="stage-d">
+        <div class="stage-d-header">
+          <div class="stage-d-num">Etapa 2</div>
+          <div class="stage-d-title">Tu ampliación · Segundo piso</div>
+          <div class="stage-d-m2">+56 m²</div>
+        </div>
+        <div class="floor-plan">
+          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="260" height="180" rx="4" fill="#FAF6F0" stroke="#1C3557" stroke-width="2"/>
+            <!-- hab 3 -->
+            <rect x="18" y="18" width="100" height="80" rx="2" fill="#1C3557" opacity=".1" stroke="#1C3557" stroke-width="1"/>
+            <text x="68" y="62" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Hab. 3</text>
+            <!-- hab 4 -->
+            <rect x="126" y="18" width="70" height="80" rx="2" fill="#1C3557" opacity=".07" stroke="#1C3557" stroke-width="1"/>
+            <text x="161" y="62" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Hab. 4</text>
+            <!-- baño 2 -->
+            <rect x="18" y="106" width="80" height="40" rx="2" fill="#C2610A" opacity=".08" stroke="#C2610A" stroke-width="1"/>
+            <text x="58" y="130" text-anchor="middle" font-size="10" fill="#C2610A" font-family="sans-serif">Baño 2</text>
+            <!-- sala estudio -->
+            <rect x="18" y="153" width="178" height="37" rx="2" fill="#1C3557" opacity=".06" stroke="#1C3557" stroke-width="1"/>
+            <text x="107" y="176" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Sala de estudio / Estar</text>
+            <!-- terraza -->
+            <rect x="204" y="18" width="58" height="168" rx="2" fill="#C2610A" opacity=".08" stroke="#C2610A" stroke-width="1"/>
+            <text x="233" y="107" text-anchor="middle" font-size="10" fill="#C2610A" font-family="sans-serif">Terraza</text>
+          </svg>
+        </div>
+        <div class="stage-d-info">
+          <div class="stage-d-badge future">📐 Tú decides cuándo</div>
+          <ul>
+            <li>2 habitaciones adicionales</li>
+            <li>Baño completo · sala de estar</li>
+            <li>Terraza · total 200m² finales</li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ░░ CIUDADES ░░ -->
-  <section class="section section-dark" id="ciudades">
-    <div class="container">
-      <div class="section-tag light">Cobertura</div>
-      <h2 class="section-title light">Tres ciudades,<br /><em>un solo proyecto</em></h2>
-      <div class="cities-grid">
-        <div class="city-card">
-          <div class="city-img-wrap">
-            <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&q=80&auto=format" alt="Arjona Bolívar" loading="lazy" />
-          </div>
-          <div class="city-body">
-            <h3>Arjona</h3>
-            <p class="city-dept">Bolívar</p>
-            <p>Municipio en crecimiento a 15 minutos de Cartagena. Convenio activo con la Alcaldía Municipal.</p>
-            <div class="city-tags">
-              <span>Convenio Alcaldía</span>
-              <span>Proyecto activo</span>
-            </div>
-          </div>
-        </div>
-        <div class="city-card">
-          <div class="city-img-wrap">
-            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80&auto=format" alt="Turbaco Bolívar" loading="lazy" />
-          </div>
-          <div class="city-body">
-            <h3>Turbaco</h3>
-            <p class="city-dept">Bolívar</p>
-            <p>A 20 minutos de Cartagena. Convenio con Secretaría de Educación para empleados oficiales.</p>
-            <div class="city-tags">
-              <span>Sec. Educación</span>
-              <span>Próximamente</span>
-            </div>
-          </div>
-        </div>
-        <div class="city-card">
-          <div class="city-img-wrap">
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80&auto=format" alt="Cartagena de Indias" loading="lazy" />
-          </div>
-          <div class="city-body">
-            <h3>Cartagena</h3>
-            <p class="city-dept">Bolívar</p>
-            <p>Proyectos en zonas de expansión. Acceso preferencial para empleados del Distrito.</p>
-            <div class="city-tags">
-              <span>Zona expansión</span>
-              <span>Próximamente</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Convenios -->
-      <div class="convenios-box">
-        <h3>Convenios con entidades oficiales</h3>
-        <p>Empleados de Alcaldías y Secretarías de Educación acceden a condiciones preferenciales: cuotas descontadas por nómina, menor cuota inicial y prioridad en asignación de unidades.</p>
-        <div class="convenios-icons">
-          <div class="conv-item">🏛 Alcaldía de Arjona</div>
-          <div class="conv-item">📚 Secretaría de Educación</div>
-          <div class="conv-item">👮 Empleados oficiales</div>
-          <div class="conv-item">🏥 Sector salud</div>
-        </div>
-        <a href="#contacto" class="btn-outline-light">¿Trabajo en una entidad? Consulta tu beneficio</a>
-      </div>
+    <div class="progresiva-cta">
+      <a href="#encuesta" class="btn-primary">Me interesa esta opción →</a>
+      <a href="https://t.me/TU_BOT_AQUI" target="_blank" class="btn-tg-sm">Preguntar al Bot</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ░░ SUBSIDIOS ░░ -->
-  <section class="section section-warm" id="subsidios">
-    <div class="container">
-      <div class="section-tag">Financiación</div>
-      <h2 class="section-title">El gobierno<br /><em>pone hasta $52M</em></h2>
-      <p class="section-sub">Así funciona la financiación de tu vivienda. Combinamos subsidio + crédito + cuotas cómodas.</p>
-
-      <div class="finance-flow">
-        <div class="finance-step">
-          <div class="fs-num">1</div>
-          <div class="fs-body">
-            <h4>Subsidio gobierno</h4>
-            <div class="fs-amount green">Hasta $52.527.150</div>
-            <p>No se devuelve. El Estado te lo regala a través de Mi Casa Ya o Fonvivienda.</p>
-          </div>
-        </div>
-        <div class="finance-plus">+</div>
-        <div class="finance-step">
-          <div class="fs-num">2</div>
-          <div class="fs-body">
-            <h4>Cuota inicial</h4>
-            <div class="fs-amount amber">Desde 10%</div>
-            <p>Puedes pagarla en cuotas cómodas durante la preventa mientras se termina la construcción.</p>
-          </div>
-        </div>
-        <div class="finance-plus">+</div>
-        <div class="finance-step">
-          <div class="fs-num">3</div>
-          <div class="fs-body">
-            <h4>Crédito hipotecario</h4>
-            <div class="fs-amount blue">A 20 años</div>
-            <p>Con FNA, Bancolombia o tu banco preferido. Cuotas desde $790.000/mes.</p>
-          </div>
-        </div>
+<!-- ░░ TIPS ░░ -->
+<section class="section section-light" id="tips">
+  <div class="container">
+    <div class="section-tag">Gratis · Cada día</div>
+    <h2 class="section-title">Tips para<br/><em>conseguir tu casa</em></h2>
+    <div class="tips-grid" id="tipsGrid"></div>
+    <div class="tips-tg-bar">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
+      <div>
+        <strong>Recibe un tip diario en Telegram</strong>
+        <p>Subsidios, ahorro, documentos, bancos… explicado fácil.</p>
       </div>
-
-      <div class="subsidy-programs">
-        <h3>Programas disponibles</h3>
-        <div class="programs-grid">
-          <div class="program-card">
-            <div class="program-logo">MiCasaYa</div>
-            <h4>Mi Casa Ya</h4>
-            <p>Subsidio directo a la cuota inicial y reducción de tasa de interés. Para ingresos hasta 8 SMMLV.</p>
-            <div class="program-benefit">Hasta $30M + tasa subsidiada</div>
-          </div>
-          <div class="program-card">
-            <div class="program-logo">FNA</div>
-            <h4>Fondo Nacional del Ahorro</h4>
-            <p>Ahorra 6 meses y accede a crédito hipotecario de muy bajas tasas. Aplica independientes y empleados.</p>
-            <div class="program-benefit">Crédito desde 9% E.A.</div>
-          </div>
-          <div class="program-card">
-            <div class="program-logo">VIPA</div>
-            <h4>VIPA</h4>
-            <p>Para hogares con ingresos hasta 2 SMMLV. El gobierno puede cubrir hasta el 100% de la vivienda.</p>
-            <div class="program-benefit">Cobertura total posible</div>
-          </div>
-          <div class="program-card">
-            <div class="program-logo">DIR</div>
-            <h4>Financiación directa</h4>
-            <p>Sin banco. Cuotas negociadas directamente con el proyecto mientras organizas tu crédito.</p>
-            <div class="program-benefit">Sin requisitos bancarios</div>
-          </div>
-        </div>
-      </div>
+      <a href="https://t.me/TU_CANAL_AQUI" target="_blank" class="btn-tg-sm white">Unirme al canal</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ░░ TIPS ░░ -->
-  <section class="section section-light" id="tips">
-    <div class="container">
-      <div class="section-tag">Consejos diarios</div>
-      <h2 class="section-title">Tips para<br /><em>conseguir tu casa</em></h2>
-      <p class="section-sub">Publicamos consejos nuevos cada día. Aquí los más importantes.</p>
+<!-- FAB -->
+<a href="https://t.me/TU_BOT_AQUI" class="fab" target="_blank" rel="noopener" aria-label="Bot Telegram">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
+  <span class="fab-tip">¿Dudas? Bot 24/7</span>
+</a>
 
-      <div class="tips-grid" id="tipsGrid">
-        <!-- generados por JS desde tips.js -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="nav-logo" style="margin-bottom:.5rem">
+        <span class="logo-mark">AP</span>
+        <span class="logo-text">Proyecto <strong>Arjona</strong></span>
       </div>
-
-      <div class="tips-telegram">
-        <div class="tg-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.03 9.566c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.293 13.69l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.462c.537-.194 1.006.131.526.897z"/></svg>
-        </div>
-        <div class="tg-text">
-          <strong>Recibe un tip diario en Telegram</strong>
-          <p>Únete a nuestro canal y aprende a ahorrar, postularte a subsidios y preparar tus documentos.</p>
-        </div>
-        <a href="https://t.me/TU_CANAL_AQUI" target="_blank" rel="noopener" class="btn-telegram-solid">Unirme al canal</a>
-      </div>
+      <p style="color:rgba(255,255,255,.4);font-size:.75rem;max-width:340px">Proyecto en etapa de pre-lanzamiento. Las imágenes son de carácter referencial generadas con IA. Precios y subsidios sujetos a disponibilidad y requisitos.</p>
     </div>
-  </section>
-
-  <!-- ░░ PARA QUIÉN ░░ -->
-  <section class="section section-cream" id="paraquien">
-    <div class="container">
-      <div class="section-tag">Nuestros clientes</div>
-      <h2 class="section-title">Hecho para<br /><em>trabajadores reales</em></h2>
-      <div class="profiles-grid">
-        <div class="profile">
-          <div class="profile-icon">👷</div>
-          <h4>Empleados oficiales</h4>
-          <p>Alcaldía, Secretarías de Educación y Salud. Cuota descontada por nómina.</p>
-        </div>
-        <div class="profile">
-          <div class="profile-icon">🏍</div>
-          <h4>Mototaxistas y transportadores</h4>
-          <p>Financiación directa sin necesidad de historia crediticia perfecta.</p>
-        </div>
-        <div class="profile">
-          <div class="profile-icon">🛒</div>
-          <h4>Comerciantes y vendedores</h4>
-          <p>Planes flexibles adaptados a ingresos variables.</p>
-        </div>
-        <div class="profile">
-          <div class="profile-icon">👩‍👧</div>
-          <h4>Madres cabeza de hogar</h4>
-          <p>Prioridad en subsidios VIPA y Mi Casa Ya para hogares uniparentales.</p>
-        </div>
-        <div class="profile">
-          <div class="profile-icon">🏗</div>
-          <h4>Trabajadores de construcción</h4>
-          <p>Acceso a programas de la Caja de Compensación Familiar del Bolívar.</p>
-        </div>
-        <div class="profile">
-          <div class="profile-icon">💼</div>
-          <h4>Empleados de empresas</h4>
-          <p>Convenios corporativos con condiciones especiales para grupos de trabajadores.</p>
-        </div>
-      </div>
+    <div class="footer-links">
+      <a href="#encuesta">Participar</a>
+      <a href="#progresiva">Vivienda Progresiva</a>
+      <a href="#tips">Consejos</a>
+      <a href="https://t.me/TU_BOT_AQUI" target="_blank">Bot Telegram</a>
     </div>
-  </section>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 · Proyecto Arjona · Arjona, Bolívar, Colombia · Proyecto legal y registrado</p>
+  </div>
+</footer>
 
-  <!-- ░░ FORMULARIO ░░ -->
-  <section class="section section-dark" id="contacto">
-    <div class="container">
-      <div class="form-wrap">
-        <div class="form-left">
-          <div class="section-tag light">Solicitar información</div>
-          <h2 class="section-title light">Reserva tu<br /><em>lugar hoy</em></h2>
-          <p style="color:rgba(255,255,255,.7);margin-top:1rem;line-height:1.7">
-            Déjanos tus datos y un asesor te contactará en menos de 2 horas con toda la información de precios, subsidios y disponibilidad.
-          </p>
-          <div class="form-promise">
-            <div class="fp-item">✅ Sin costo ni compromiso</div>
-            <div class="fp-item">✅ Respuesta en menos de 2 horas</div>
-            <div class="fp-item">✅ Información 100% confidencial</div>
-            <div class="fp-item">✅ Bot de Telegram disponible 24/7</div>
-          </div>
-        </div>
-
-        <div class="form-right">
-          <form class="lead-form" id="leadForm">
-            <div class="form-group">
-              <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="telefono">Teléfono / WhatsApp</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="3XX XXX XXXX" required />
-              </div>
-              <div class="form-group">
-                <label for="ciudad">Ciudad de interés</label>
-                <select id="ciudad" name="ciudad" required>
-                  <option value="">Selecciona...</option>
-                  <option>Arjona</option>
-                  <option>Turbaco</option>
-                  <option>Cartagena</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="producto">¿Qué te interesa?</label>
-              <select id="producto" name="producto">
-                <option value="">Selecciona...</option>
-                <option>Vivienda Progresiva Tipo 1 (200m² lote)</option>
-                <option>Vivienda Progresiva Tipo 2 (720m² lote)</option>
-                <option>Lote solo</option>
-                <option>Quiero que me asesoren</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="empleo">¿Eres empleado oficial?</label>
-              <select id="empleo" name="empleo">
-                <option value="">Selecciona...</option>
-                <option>Sí — Alcaldía / Gobernación</option>
-                <option>Sí — Secretaría de Educación</option>
-                <option>Sí — Salud / Hospital</option>
-                <option>No soy empleado oficial</option>
-              </select>
-            </div>
-            <button type="submit" class="btn-form">
-              Quiero que me contacten
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-            <p class="form-note">O escríbenos directamente en Telegram →
-              <a href="https://t.me/TU_BOT_AQUI" target="_blank" rel="noopener">@TuBot</a>
-            </p>
-          </form>
-
-          <div class="form-success" id="formSuccess" style="display:none">
-            <div class="success-icon">✅</div>
-            <h3>¡Recibimos tu solicitud!</h3>
-            <p>Un asesor te contactará en menos de 2 horas. También puedes hablar ya con nuestro bot:</p>
-            <a href="https://t.me/TU_BOT_AQUI" target="_blank" rel="noopener" class="btn-telegram-solid">Ir al Bot de Telegram</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ FOOTER ░░ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="logo-mark">AP</span>
-          <span class="logo-text">Arjona<strong>Progresiva</strong></span>
-        </div>
-        <div class="footer-links">
-          <a href="#producto">El proyecto</a>
-          <a href="#subsidios">Subsidios</a>
-          <a href="#tips">Consejos</a>
-          <a href="#contacto">Contacto</a>
-        </div>
-        <a href="https://t.me/TU_BOT_AQUI" class="btn-telegram" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.03 9.566c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.293 13.69l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.462c.537-.194 1.006.131.526.897z"/></svg>
-          Bot 24/7
-        </a>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 ArjonaProgresiva · Proyecto inmobiliario VIS · Arjona, Bolívar, Colombia</p>
-        <p class="footer-legal">Los precios y subsidios son referenciales y están sujetos a disponibilidad y verificación de requisitos.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- FAB Telegram -->
-  <a href="https://t.me/TU_BOT_AQUI" class="fab-telegram" target="_blank" rel="noopener" aria-label="Abrir Bot Telegram">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.03 9.566c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.293 13.69l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.462c.537-.194 1.006.131.526.897z"/></svg>
-    <span class="fab-tooltip">¿Dudas? Bot 24/7</span>
-  </a>
-
-  <script src="js/tips.js"></script>
-  <script src="js/main.js"></script>
+<script src="js/tips.js"></script>
+<script src="js/survey.js"></script>
 </body>
 </html>

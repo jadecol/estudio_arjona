@@ -1,58 +1,25 @@
-// tips.js — Base de tips rotativos para subsidios y ahorro
+// tips.js — Tips rotativos de subsidios y ahorro para vivienda
 const TIPS = [
-  {
-    titulo: "Abre una Cuenta de Ahorro Programado en el FNA",
-    texto: "Ahorra lo que puedas cada mes durante 6 meses y ya puedes solicitar crédito hipotecario con tasas preferenciales. Aplica para empleados, independientes y mototaxistas.",
-  },
-  {
-    titulo: "Solicita el subsidio Mi Casa Ya antes de firmar",
-    texto: "El subsidio Mi Casa Ya se debe tramitar antes de que el proyecto tenga escrituración. Habla con nosotros y te acompañamos con toda la documentación sin costo.",
-  },
-  {
-    titulo: "¿Qué documentos necesitas para el crédito?",
-    texto: "Cédula, certificado laboral o declaración de renta (si eres independiente), extractos bancarios de 3 meses y carta de aprobación del subsidio. Empieza a organizarlos hoy.",
-  },
-  {
-    titulo: "El historial en Datacrédito no es un obstáculo",
-    texto: "Hay entidades como el FNA y algunas cooperativas que financian aunque no tengas historial perfecto. La clave es demostrar ingresos estables, no tener un puntaje alto.",
-  },
-  {
-    titulo: "Empleados oficiales tienen ventaja real",
-    texto: "Si trabajas en la Alcaldía, la Gobernación, una IPS o colegio público, puedes pedir que te descuenten la cuota por nómina. Esto te da acceso a mejores tasas y menos trámites.",
-  },
-  {
-    titulo: "¿Por qué comprar en Arjona y no en Cartagena?",
-    texto: "En Arjona consigues lotes de 200m² o más por el mismo precio que un apartamento pequeño en Cartagena. Además puedes ampliar la casa a tu ritmo sin pagar administración.",
-  },
-  {
-    titulo: "Vivienda Progresiva: primero vivir, luego crecer",
-    texto: "El primer piso listo para habitar te permite salir de arrendamiento ya. El segundo piso lo construyes cuando tengas más recursos. La estructura ya está preparada.",
-  },
-  {
-    titulo: "¿Cómo ahorrar la cuota inicial en 12 meses?",
-    texto: "Si necesitas $14M de cuota inicial, ahorrando $1.2M/mes lo consigues en 12 meses. Una cuenta de ahorros digital (Nequi, Daviplata) con meta programada te ayuda a no gastarlo.",
-  },
-  {
-    titulo: "El subsidio VIPA puede cubrir el 100%",
-    texto: "Para hogares con ingresos hasta 2 SMMLV, el programa VIPA puede cubrir hasta el valor total de la vivienda. Si no tienes ingresos formales, el bot te explica cómo postularte.",
-  },
+  { t: 'Ahorra con el FNA desde ya', p: 'Abre una cuenta en el Fondo Nacional del Ahorro y ahorra lo que puedas cada mes. Con solo 6 meses de ahorro puedes solicitar crédito hipotecario con tasas más bajas que cualquier banco.' },
+  { t: '¿Qué es Mi Casa Ya y cómo aplico?', p: 'Mi Casa Ya es el subsidio del gobierno nacional. Te da hasta $30 millones para la cuota inicial y reduce tu tasa de interés. Aplica si tus ingresos son menores a 8 salarios mínimos.' },
+  { t: 'Empleados oficiales tienen ventaja', p: 'Si trabajas en la Alcaldía, Secretaría de Educación o un hospital público, puedes pedir descuento por nómina para tu cuota mensual. Eso te abre las puertas a mejores créditos.' },
+  { t: 'Los documentos que debes tener listos', p: 'Cédula, certificado laboral o declaración de renta (si eres independiente) y extractos bancarios de los últimos 3 meses. Empieza a organizarlos hoy, antes de que el proyecto abra.' },
+  { t: 'Datacrédito no es un obstáculo', p: 'Si tienes deudas pequeñas, el FNA y algunas cooperativas te prestan igual. Lo importante es demostrar ingresos estables. Habla con nuestro bot y te orientamos.' },
+  { t: 'Vivienda Progresiva y el subsidio', p: 'Una vivienda de 48m² cuesta menos de 135 SMMLV, por eso aplica al subsidio VIS. Eso significa que puedes recibir hasta $52 millones del gobierno que NO se devuelven.' },
+  { t: 'Cuota inicial en cómodas cuotas', p: 'En etapa de preventa puedes pagar la cuota inicial en mensualidades pequeñas mientras la casa se construye. No necesitas tener todo el dinero de una sola vez.' },
+  { t: '¿Qué es el VIPA?', p: 'Para hogares con ingresos hasta 2 salarios mínimos, el programa VIPA puede cubrir casi el valor total de la vivienda. Si eres madre cabeza de hogar o mototaxista, consulta si clasificas.' },
+  { t: 'Compra en Arjona, no en Cartagena', p: 'Por el mismo precio de un apartamento pequeño en Cartagena consigues un lote de 200m² en Arjona, a 15 minutos. Sin administración, puedes ampliar y construir como quieras.' },
+  { t: 'Caja de compensación familiar', p: 'Si estás afiliado a Comfamiliar o Cajacopi, revisa sus programas de vivienda. Muchas cajas dan subsidios adicionales que se suman al del gobierno nacional.' },
 ];
 
-// Muestra 6 tips al azar (o los que hay si son menos)
-function renderTips() {
-  const container = document.getElementById('tipsGrid');
-  if (!container) return;
-
-  // Mezclar y tomar los primeros 6
-  const shuffled = [...TIPS].sort(() => Math.random() - 0.5).slice(0, 6);
-
-  container.innerHTML = shuffled.map((t, i) => `
+document.addEventListener('DOMContentLoaded', () => {
+  const g = document.getElementById('tipsGrid');
+  if (!g) return;
+  const show = [...TIPS].sort(() => Math.random() - .5).slice(0, 6);
+  g.innerHTML = show.map((tip, i) => `
     <div class="tip-card">
-      <div class="tip-num">Tip ${String(i + 1).padStart(2, '0')}</div>
-      <h4>${t.titulo}</h4>
-      <p>${t.texto}</p>
-    </div>
-  `).join('');
-}
-
-document.addEventListener('DOMContentLoaded', renderTips);
+      <div class="tip-n">Tip ${String(i + 1).padStart(2, '0')}</div>
+      <h4>${tip.t}</h4>
+      <p>${tip.p}</p>
+    </div>`).join('');
+});

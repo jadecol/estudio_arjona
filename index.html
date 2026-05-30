@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Próximo proyecto de vivienda en Arjona. Dinos qué quieres y sé el primero en elegir con bono especial."/>
+  <meta name="description" content="¿Quieres casa o lote en Arjona? Regístrate gratis, recibe un bono de $500.000 y sé el primero en elegir."/>
   <meta name="theme-color" content="#C2610A"/>
   <title>¿Qué tipo de vivienda quieres? · Proyecto Arjona</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 
 <!-- ░ TOPBAR ░ -->
 <div class="topbar">
-  <span class="pulse-wrap"><span class="pulse-dot"></span> Proyecto en etapa de pre-lanzamiento</span>
+  <span class="pulse-wrap"><span class="pulse-dot"></span> Pre-lanzamiento activo</span>
   <span>📍 Arjona · Turbaco · Cartagena</span>
-  <span id="topCounter">🎁 <strong id="spotsLeft">47</strong> cupos fundadores disponibles</span>
+  <span>🎁 Bono $500.000 para los primeros <strong id="spotsLeft">47</strong></span>
 </div>
 
 <!-- ░ NAV ░ -->
@@ -28,349 +28,409 @@
       <span class="logo-text">Proyecto <strong>Arjona</strong></span>
     </a>
     <div class="nav-right">
-      <a href="https://t.me/TU_BOT_AQUI" target="_blank" class="btn-tg-sm">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
+      <a href="https://t.me/TU_BOT_AQUI" target="_blank" rel="noopener" class="btn-tg-sm">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
         Bot 24/7
       </a>
-      <button class="nav-toggle" id="navToggle">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
-<!-- ░░ HERO — ENCUESTA ░░ -->
-<section class="hero-survey">
+<!-- ░░ HERO ░░ -->
+<section class="hero">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=75&auto=format" alt="" aria-hidden="true" class="hero-bg-img"/>
-    <div class="hero-bg-overlay"></div>
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=75&auto=format" alt="" aria-hidden="true"/>
+    <div class="hero-overlay"></div>
   </div>
-
-  <div class="hero-survey-content">
-    <!-- Badge urgencia -->
+  <div class="hero-content">
     <div class="urgency-badge animate-in" style="--d:0s">
-      🎁 Regístrate hoy y recibe un <strong>bono de $500.000</strong> para tu cuota inicial
+      <span class="pulse-dot"></span> &nbsp;Bono fundador: <strong>$500.000 para tu cuota inicial</strong>
     </div>
-
-    <h1 class="hero-h1 animate-in" style="--d:.08s">
-      Estamos diseñando el proyecto<br/>
-      <em>para ti.</em>
+    <h1 class="animate-in" style="--d:.08s">
+      Tu casa propia<br/>en Arjona.<br/><em>Dinos qué quieres.</em>
     </h1>
-    <p class="hero-p animate-in" style="--d:.16s">
-      Dinos qué necesitas, cuánto podrías pagar<br class="br-d"/>
+    <p class="hero-sub animate-in" style="--d:.18s">
+      Estamos diseñando el proyecto. <br class="show-sm"/>
+      Responde 5 preguntas, regístrate gratis<br class="show-sm"/>
       y sé el primero en elegir cuando abramos.
     </p>
-
-    <!-- CONTADOR fundadores -->
-    <div class="founders-bar animate-in" style="--d:.24s">
-      <div class="founders-track">
-        <div class="founders-fill" id="foundersBar"></div>
-      </div>
-      <div class="founders-label">
-        <span id="foundersCount">53</span> de 100 cupos fundadores ocupados
-      </div>
+    <div class="founders-wrap animate-in" style="--d:.26s">
+      <div class="founders-track"><div class="founders-fill" id="foundersBar"></div></div>
+      <span class="founders-lbl"><strong id="foundersCount">53</strong> de 100 cupos fundadores ocupados</span>
     </div>
-
-    <a href="#encuesta" class="btn-start animate-in" style="--d:.32s">
-      Quiero participar y recibir mi bono
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </a>
+    <div class="hero-ctas animate-in" style="--d:.34s">
+      <a href="#encuesta" class="btn-start">Quiero mi bono — registrarme gratis
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+      <a href="#calcular" class="btn-outline-hero">¿Cuánto me costaría?</a>
+    </div>
   </div>
 </section>
 
-<!-- ░░ ENCUESTA INTERACTIVA ░░ -->
+<!-- ░░ CALCULADORA DE ENGANCHE ░░ -->
+<section class="section section-warm" id="calcular">
+  <div class="container">
+    <div class="calc-wrap">
+      <div class="calc-left">
+        <div class="section-tag">Sin compromiso · Solo números</div>
+        <h2 class="section-title">¿Puedes pagar<br/><em>tu casa hoy?</em></h2>
+        <p class="section-sub">Mueve el slider y ve exactamente cuánto te costaría cada mes, cuánto te regala el gobierno y en cuánto tiempo tendrías la cuota inicial lista.</p>
+      </div>
+      <div class="calc-right">
+        <div class="calc-card">
+
+          <!-- Selector de tipo -->
+          <div class="calc-tipo">
+            <button class="calc-tipo-btn active" data-precio="22000000" data-nombre="Lote 200m²">Lote 200m²</button>
+            <button class="calc-tipo-btn" data-precio="80000000" data-nombre="Lote 800m²">Lote 800m²</button>
+            <button class="calc-tipo-btn" data-precio="143574210" data-nombre="Vivienda Progresiva">Casa Progresiva</button>
+            <button class="calc-tipo-btn" data-precio="220000000" data-nombre="Casa Terminada">Casa Terminada</button>
+          </div>
+
+          <!-- Slider de ahorro -->
+          <div class="calc-slider-wrap">
+            <label class="calc-label">¿Cuánto puedes ahorrar al mes?</label>
+            <div class="slider-row">
+              <span class="slider-min">$100K</span>
+              <input type="range" id="sliderAhorro" min="100000" max="1500000" step="50000" value="300000" class="slider"/>
+              <span class="slider-max">$1.5M</span>
+            </div>
+            <div class="slider-val" id="sliderVal">$300.000 / mes</div>
+          </div>
+
+          <!-- Selector subsidio -->
+          <div class="calc-subsidio">
+            <label class="calc-label">¿Clasificas para subsidio del gobierno?</label>
+            <div class="subsidio-opts">
+              <label class="sub-opt selected" data-sub="52527150">
+                <input type="radio" name="subsidio" value="52527150" checked/>
+                ✅ Sí, ingresos hasta 2 SMMLV<br/><small>Subsidio hasta $52.5M</small>
+              </label>
+              <label class="sub-opt" data-sub="35018100">
+                <input type="radio" name="subsidio" value="35018100"/>
+                🟡 Ingresos 2–4 SMMLV<br/><small>Subsidio hasta $35M</small>
+              </label>
+              <label class="sub-opt" data-sub="0">
+                <input type="radio" name="subsidio" value="0"/>
+                ❌ No clasifico o no sé<br/><small>Sin subsidio</small>
+              </label>
+            </div>
+          </div>
+
+          <!-- Resultados -->
+          <div class="calc-results" id="calcResults">
+            <div class="result-row">
+              <span>Precio del inmueble</span>
+              <strong id="r-precio">$22.000.000</strong>
+            </div>
+            <div class="result-row green-row">
+              <span>(-) Subsidio del gobierno</span>
+              <strong id="r-subsidio" class="green">-$52.527.150</strong>
+            </div>
+            <div class="result-row">
+              <span>Cuota inicial (10%)</span>
+              <strong id="r-inicial">$2.200.000</strong>
+            </div>
+            <div class="result-row">
+              <span>Crédito hipotecario</span>
+              <strong id="r-credito">$0</strong>
+            </div>
+            <div class="result-divider"></div>
+            <div class="result-row big-row">
+              <span>Cuota mensual estimada</span>
+              <strong id="r-cuota" class="big-val">$0 / mes</strong>
+            </div>
+            <div class="result-row highlight-row">
+              <span>⏱ Ahorrando $300K/mes, tienes la cuota inicial en:</span>
+              <strong id="r-tiempo" class="amber-val">1 mes</strong>
+            </div>
+          </div>
+
+          <a href="#encuesta" class="btn-calc-cta">Me interesa — registrarme gratis →</a>
+          <p class="calc-nota">* Cuota calculada a 20 años, tasa 11% E.A. referencial. Solo orientativo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ ENCUESTA ░░ -->
 <section class="survey-section" id="encuesta">
   <div class="survey-container">
-
     <div class="survey-header">
-      <div class="section-tag">2 minutos · Sin compromiso</div>
-      <h2 class="survey-title">¿Qué necesitas exactamente?</h2>
-      <p class="survey-sub">Selecciona lo que más se ajusta a lo que buscas. No hay respuesta incorrecta.</p>
+      <div class="section-tag light">2 minutos · Sin compromiso · Bono $500.000</div>
+      <h2>¿Qué necesitas exactamente?</h2>
+      <p>Selecciona lo que más te llama la atención. No hay respuesta incorrecta.</p>
     </div>
 
-    <!-- PASO 1: Tipo de propiedad -->
+    <!-- PASO 1 -->
     <div class="survey-step active" id="step1">
       <div class="step-label"><span class="step-num">1</span> ¿Qué te gustaría comprar?</div>
       <div class="options-grid">
 
+        <!-- Lote 200m² -->
         <label class="opt-card" data-val="lote_200">
           <input type="radio" name="tipo" value="lote_200"/>
           <div class="opt-visual">
-            <!-- SVG esquema lote 200m² -->
-            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10" y="10" width="180" height="120" rx="4" fill="#FDF3E7" stroke="#C2610A" stroke-width="2"/>
-              <rect x="25" y="20" width="80" height="60" rx="3" fill="#C2610A" opacity=".18" stroke="#C2610A" stroke-width="1.5"/>
-              <rect x="25" y="20" width="80" height="60" rx="3" fill="none" stroke="#C2610A" stroke-width="1.5"/>
-              <!-- casa icono simple -->
-              <polygon points="65,22 90,40 40,40" fill="#C2610A" opacity=".6"/>
-              <rect x="48" y="40" width="34" height="24" fill="#C2610A" opacity=".3"/>
-              <rect x="56" y="48" width="8" height="10" fill="#C2610A" opacity=".6"/>
-              <!-- terreno restante -->
-              <text x="120" y="55" font-size="9" fill="#888" font-family="sans-serif">Jardín /</text>
-              <text x="120" y="66" font-size="9" fill="#888" font-family="sans-serif">ampliación</text>
-              <text x="18" y="100" font-size="10" fill="#C2610A" font-weight="bold" font-family="sans-serif">200 m²</text>
-              <text x="18" y="114" font-size="9" fill="#666" font-family="sans-serif">Solo el lote urbanizado</text>
+            <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="232" height="142" rx="6" fill="#FAF6F0" stroke="#C2610A" stroke-width="1.5"/>
+              <!-- casa -->
+              <rect x="20" y="50" width="90" height="70" rx="3" fill="#fff" stroke="#C2610A" stroke-width="1.5"/>
+              <polygon points="65,20 110,50 20,50" fill="#C2610A" opacity=".6"/>
+              <rect x="38" y="72" width="18" height="16" rx="1" fill="#C2610A" opacity=".25" stroke="#C2610A" stroke-width="1"/>
+              <rect x="66" y="72" width="18" height="16" rx="1" fill="#C2610A" opacity=".25" stroke="#C2610A" stroke-width="1"/>
+              <rect x="48" y="85" width="20" height="35" rx="1" fill="#C2610A" opacity=".35"/>
+              <!-- terreno libre -->
+              <rect x="122" y="35" width="102" height="96" rx="3" fill="#C2610A" opacity=".05" stroke="#C2610A" stroke-width="1" stroke-dasharray="5,3"/>
+              <text x="173" y="78" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif">Jardín o</text>
+              <text x="173" y="93" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif">ampliación</text>
+              <!-- etiqueta -->
+              <rect x="14" y="126" width="80" height="16" rx="3" fill="#C2610A" opacity=".12"/>
+              <text x="54" y="138" text-anchor="middle" font-size="10" font-weight="bold" fill="#C2610A" font-family="sans-serif">200 m²</text>
             </svg>
           </div>
           <div class="opt-body">
             <strong>Lote de 200 m²</strong>
-            <p>Solo el terreno urbanizado. Construyes tu casa a tu ritmo y como quieras.</p>
+            <p>Tuyo el terreno. Construyes tu casa como quieras y cuando puedas. Sin cuotas de administración.</p>
             <div class="opt-price">Desde ~$22M</div>
           </div>
           <div class="opt-check">✓</div>
         </label>
 
+        <!-- Lote 800m² -->
         <label class="opt-card" data-val="lote_800">
           <input type="radio" name="tipo" value="lote_800"/>
           <div class="opt-visual">
-            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10" y="10" width="180" height="120" rx="4" fill="#FDF3E7" stroke="#8E4208" stroke-width="2"/>
-              <rect x="20" y="18" width="70" height="50" rx="3" fill="#C2610A" opacity=".2" stroke="#C2610A" stroke-width="1.5"/>
-              <polygon points="55,20 76,34 34,34" fill="#C2610A" opacity=".55"/>
-              <rect x="40" y="34" width="30" height="20" fill="#C2610A" opacity=".25"/>
-              <rect x="47" y="40" width="7" height="9" fill="#C2610A" opacity=".5"/>
-              <!-- espacio amplio -->
-              <rect x="98" y="18" width="82" height="50" rx="3" fill="#8E4208" opacity=".07" stroke="#8E4208" stroke-width="1" stroke-dasharray="4,3"/>
-              <rect x="20" y="76" width="160" height="44" rx="3" fill="#8E4208" opacity=".07" stroke="#8E4208" stroke-width="1" stroke-dasharray="4,3"/>
-              <text x="100" y="48" font-size="8.5" fill="#8E4208" font-family="sans-serif">Zona extra</text>
-              <text x="86" y="103" font-size="8.5" fill="#8E4208" font-family="sans-serif">Patio / Segunda vivienda</text>
-              <text x="14" y="132" font-size="10" fill="#8E4208" font-weight="bold" font-family="sans-serif">800 m² · Gran espacio</text>
+            <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="232" height="142" rx="6" fill="#FAF6F0" stroke="#8E4208" stroke-width="1.5"/>
+              <!-- casa principal -->
+              <rect x="14" y="50" width="72" height="80" rx="3" fill="#fff" stroke="#C2610A" stroke-width="1.5"/>
+              <polygon points="50,22 86,50 14,50" fill="#C2610A" opacity=".55"/>
+              <rect x="23" y="72" width="14" height="12" rx="1" fill="#C2610A" opacity=".25" stroke="#C2610A" stroke-width="1"/>
+              <rect x="46" y="72" width="14" height="12" rx="1" fill="#C2610A" opacity=".25" stroke="#C2610A" stroke-width="1"/>
+              <rect x="32" y="88" width="16" height="42" rx="1" fill="#C2610A" opacity=".35"/>
+              <!-- zona extra derecha -->
+              <rect x="96" y="14" width="130" height="60" rx="3" fill="#8E4208" opacity=".06" stroke="#8E4208" stroke-width="1" stroke-dasharray="4,3"/>
+              <text x="161" y="42" text-anchor="middle" font-size="10" fill="#8E4208" font-family="sans-serif">Casa de la mamá /</text>
+              <text x="161" y="56" text-anchor="middle" font-size="10" fill="#8E4208" font-family="sans-serif">negocio propio</text>
+              <!-- zona inferior -->
+              <rect x="96" y="84" width="130" height="56" rx="3" fill="#8E4208" opacity=".06" stroke="#8E4208" stroke-width="1" stroke-dasharray="4,3"/>
+              <text x="161" y="116" text-anchor="middle" font-size="10" fill="#8E4208" font-family="sans-serif">Patio · zona de juegos</text>
+              <!-- etiqueta -->
+              <rect x="14" y="125" width="76" height="16" rx="3" fill="#8E4208" opacity=".12"/>
+              <text x="52" y="137" text-anchor="middle" font-size="10" font-weight="bold" fill="#8E4208" font-family="sans-serif">800 m²</text>
             </svg>
           </div>
           <div class="opt-body">
             <strong>Lote de 800 m²</strong>
-            <p>Amplio terreno por norma municipal. Ideal para familia grande o segunda vivienda.</p>
+            <p>Espacio para tu casa, la de tu mamá y el patio donde tus hijos corran. La norma municipal lo exige así.</p>
             <div class="opt-price">Desde ~$80M</div>
           </div>
           <div class="opt-check">✓</div>
         </label>
 
+        <!-- Vivienda Progresiva -->
         <label class="opt-card opt-featured" data-val="vivienda_progresiva">
           <input type="radio" name="tipo" value="vivienda_progresiva"/>
-          <div class="opt-badge-top">La más solicitada</div>
+          <div class="opt-badge-top">⭐ La más pedida</div>
           <div class="opt-visual">
-            <!-- Esquema vivienda progresiva 3 etapas -->
-            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-              <!-- Etapa 1: 48m² -->
-              <rect x="8" y="45" width="48" height="70" rx="3" fill="#FDF3E7" stroke="#C2610A" stroke-width="1.5"/>
-              <polygon points="32,10 56,45 8,45" fill="#C2610A" opacity=".7"/>
-              <!-- puertas/ventanas -->
-              <rect x="14" y="60" width="10" height="10" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
-              <rect x="32" y="55" width="12" height="22" rx="1" fill="#C2610A" opacity=".4"/>
-              <text x="12" y="128" font-size="7.5" fill="#C2610A" font-weight="bold" font-family="sans-serif">48m² listo</text>
-
-              <!-- Flecha -->
-              <path d="M62 80 L76 80" stroke="#C2610A" stroke-width="1.5" marker-end="url(#arr)"/>
-              <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#C2610A"/></marker></defs>
-
-              <!-- Etapa 2: +dormitorio -->
-              <rect x="80" y="35" width="48" height="80" rx="3" fill="#FDF3E7" stroke="#C2610A" stroke-width="1.5"/>
-              <rect x="80" y="35" width="48" height="30" rx="3" fill="#C2610A" opacity=".1" stroke="#C2610A" stroke-width="1" stroke-dasharray="3,2"/>
-              <polygon points="104,8 128,35 80,35" fill="#C2610A" opacity=".5"/>
-              <rect x="86" y="53" width="10" height="10" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
-              <rect x="103" y="45" width="12" height="22" rx="1" fill="#C2610A" opacity=".35"/>
-              <text x="82" y="128" font-size="7.5" fill="#C2610A" font-weight="bold" font-family="sans-serif">+dormit.</text>
-
-              <!-- Flecha -->
-              <path d="M134 80 L148 80" stroke="#C2610A" stroke-width="1.5" marker-end="url(#arr)"/>
-
-              <!-- Etapa 3: 2 pisos 200m² -->
-              <rect x="152" y="20" width="40" height="95" rx="3" fill="#C2610A" opacity=".15" stroke="#C2610A" stroke-width="2"/>
-              <line x1="152" y1="57" x2="192" y2="57" stroke="#C2610A" stroke-width="1" stroke-dasharray="3,2"/>
-              <rect x="157" y="60" width="8" height="9" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
-              <rect x="170" y="60" width="8" height="9" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
-              <rect x="157" y="25" width="8" height="9" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
-              <rect x="170" y="25" width="8" height="9" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".8"/>
-              <rect x="163" y="72" width="12" height="20" rx="1" fill="#C2610A" opacity=".45"/>
-              <text x="150" y="128" font-size="7.5" fill="#C2610A" font-weight="bold" font-family="sans-serif">200m² final</text>
+            <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="232" height="142" rx="6" fill="#FDF3E7"/>
+              <!-- Etapa 1 -->
+              <rect x="18" y="60" width="52" height="68" rx="3" fill="#fff" stroke="#C2610A" stroke-width="2"/>
+              <polygon points="44,28 70,60 18,60" fill="#C2610A" opacity=".75"/>
+              <rect x="26" y="78" width="10" height="10" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
+              <rect x="47" y="78" width="10" height="10" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
+              <rect x="32" y="92" width="14" height="36" rx="1" fill="#C2610A" opacity=".4"/>
+              <text x="44" y="142" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#C2610A" font-family="sans-serif">48m² listo</text>
+              <!-- flecha 1 -->
+              <path d="M76 94 L96 94" stroke="#C2610A" stroke-width="2" marker-end="url(#a1)"/>
+              <defs><marker id="a1" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C2610A"/></marker></defs>
+              <!-- Etapa 2 -->
+              <rect x="100" y="50" width="52" height="78" rx="3" fill="#fff" stroke="#C2610A" stroke-width="2"/>
+              <rect x="100" y="50" width="52" height="28" rx="3" fill="#C2610A" opacity=".08" stroke="#C2610A" stroke-width="1" stroke-dasharray="3,2"/>
+              <polygon points="126,20 152,50 100,50" fill="#C2610A" opacity=".5"/>
+              <rect x="108" y="68" width="10" height="10" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
+              <rect x="130" y="68" width="10" height="10" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
+              <rect x="114" y="82" width="14" height="46" rx="1" fill="#C2610A" opacity=".35"/>
+              <text x="126" y="142" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#C2610A" font-family="sans-serif">+dormit.</text>
+              <!-- flecha 2 -->
+              <path d="M158 94 L178 94" stroke="#C2610A" stroke-width="2" marker-end="url(#a1)"/>
+              <!-- Etapa 3: 2 pisos -->
+              <rect x="182" y="30" width="50" height="98" rx="3" fill="#C2610A" opacity=".18" stroke="#C2610A" stroke-width="2"/>
+              <line x1="182" y1="75" x2="232" y2="75" stroke="#C2610A" stroke-width="1.5"/>
+              <rect x="189" y="36" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".9"/>
+              <rect x="205" y="36" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".9"/>
+              <rect x="189" y="80" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".9"/>
+              <rect x="205" y="80" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".9"/>
+              <rect x="196" y="93" width="16" height="35" rx="1" fill="#C2610A" opacity=".5"/>
+              <text x="207" y="142" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#C2610A" font-family="sans-serif">200m²</text>
             </svg>
           </div>
           <div class="opt-body">
             <strong>Vivienda Progresiva</strong>
-            <p><em>Empiezas con 48m² listos para vivir y amplías hasta 200m² cuando puedas.</em> La estructura ya viene preparada para el 2° piso.</p>
-            <div class="opt-price">Desde $143M · Aplica subsidio</div>
+            <p><em>Empiezas a vivir ya. Cuando tengas más plata, construyes el 2° piso.</em> La estructura ya viene preparada. Sin demoler nada.</p>
+            <div class="opt-price">Desde $143M · Aplica subsidio ✓</div>
           </div>
           <div class="opt-check">✓</div>
         </label>
 
+        <!-- Casa Terminada -->
         <label class="opt-card" data-val="casa_terminada">
           <input type="radio" name="tipo" value="casa_terminada"/>
           <div class="opt-visual">
-            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-              <!-- Casa terminada 2 pisos -->
-              <rect x="30" y="30" width="140" height="95" rx="4" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="2"/>
-              <line x1="30" y1="72" x2="170" y2="72" stroke="#1C3557" stroke-width="1.5"/>
-              <!-- piso 2 -->
-              <rect x="40" y="35" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
-              <rect x="74" y="35" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
-              <rect x="108" y="35" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
-              <!-- piso 1 -->
-              <rect x="40" y="77" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
-              <rect x="74" y="77" width="22" height="18" rx="1" fill="#fff" stroke="#1C3557" stroke-width="1" opacity=".9"/>
-              <rect x="90" y="80" width="20" height="35" rx="1" fill="#1C3557" opacity=".25"/>
+            <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="232" height="142" rx="6" fill="#FAF6F0" stroke="#1C3557" stroke-width="1.5"/>
+              <!-- fachada 2 pisos -->
+              <rect x="32" y="42" width="176" height="96" rx="4" fill="#fff" stroke="#1C3557" stroke-width="1.5"/>
+              <line x1="32" y1="90" x2="208" y2="90" stroke="#1C3557" stroke-width="1.5"/>
               <!-- techo -->
-              <polygon points="100,5 175,30 25,30" fill="#1C3557" opacity=".5"/>
-              <text x="38" y="140" font-size="9" fill="#1C3557" font-weight="bold" font-family="sans-serif">Casa lista · 2 pisos · 3 hab.</text>
+              <polygon points="120,10 212,42 28,42" fill="#1C3557" opacity=".55"/>
+              <!-- ventanas piso 2 -->
+              <rect x="48" y="54" width="26" height="22" rx="2" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="1"/>
+              <rect x="90" y="54" width="26" height="22" rx="2" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="1"/>
+              <rect x="132" y="54" width="26" height="22" rx="2" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="1"/>
+              <rect x="174" y="54" width="22" height="22" rx="2" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="1"/>
+              <!-- ventanas piso 1 -->
+              <rect x="48" y="98" width="26" height="22" rx="2" fill="#1C3557" opacity=".1" stroke="#1C3557" stroke-width="1"/>
+              <rect x="90" y="98" width="26" height="22" rx="2" fill="#1C3557" opacity=".1" stroke="#1C3557" stroke-width="1"/>
+              <!-- puerta -->
+              <rect x="140" y="97" width="30" height="41" rx="2" fill="#1C3557" opacity=".3"/>
+              <rect x="178" y="98" width="22" height="22" rx="2" fill="#1C3557" opacity=".1" stroke="#1C3557" stroke-width="1"/>
+              <!-- label -->
+              <rect x="56" y="128" width="128" height="16" rx="3" fill="#1C3557" opacity=".1"/>
+              <text x="120" y="140" text-anchor="middle" font-size="10" font-weight="bold" fill="#1C3557" font-family="sans-serif">Casa lista · 2 pisos · 3 hab.</text>
             </svg>
           </div>
           <div class="opt-body">
             <strong>Casa terminada</strong>
-            <p>2 pisos completos, 3 habitaciones, 2 baños. Llegas y vives. Sin construcción adicional.</p>
+            <p>Llegas con tus maletas y ya. 3 habitaciones, 2 baños, todo listo. Nada que construir después.</p>
             <div class="opt-price">Desde $220M</div>
           </div>
           <div class="opt-check">✓</div>
         </label>
 
       </div>
-      <button class="btn-step-next" id="btn1" disabled onclick="goStep(2)">
-        Continuar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <button class="btn-next" id="btn1" disabled onclick="goStep(2)">
+        Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
     </div>
 
-    <!-- PASO 2: Capacidad de pago -->
+    <!-- PASO 2 -->
     <div class="survey-step" id="step2">
       <button class="btn-back" onclick="goStep(1)">← Volver</button>
-      <div class="step-label"><span class="step-num">2</span> ¿Cuánto podrías pagar al mes por tu vivienda?</div>
-      <p class="step-note">Incluyendo crédito + cuota. Esto nos ayuda a diseñar el plan de pago ideal para ti.</p>
-      <div class="options-list">
-        <label class="opt-list-item" data-val="menos300">
-          <input type="radio" name="pago" value="menos300"/>
-          <div class="oli-icon">💚</div>
-          <div class="oli-body"><strong>Menos de $300.000/mes</strong><p>Busco el plan más económico. Necesito mucha ayuda con el subsidio.</p></div>
-          <div class="oli-check">✓</div>
+      <div class="step-label"><span class="step-num">2</span> ¿Cuánto puedes pagar al mes?</div>
+      <p class="step-hint">Suma arriendo + lo que podrías agregar. Así diseñamos el plan que te funcione.</p>
+      <div class="opts-list">
+        <label class="opt-li" data-val="menos300"><input type="radio" name="pago" value="menos300"/>
+          <div class="oli-ico">💚</div>
+          <div class="oli-b"><strong>Menos de $300.000</strong><p>Quiero el plan más asequible. Necesito mucha ayuda con el subsidio.</p></div>
+          <div class="oli-ck">✓</div>
         </label>
-        <label class="opt-list-item" data-val="300_600">
-          <input type="radio" name="pago" value="300_600"/>
-          <div class="oli-icon">💛</div>
-          <div class="oli-body"><strong>Entre $300.000 y $600.000/mes</strong><p>Tengo ingresos moderados. Me interesa subsidio + crédito bancario.</p></div>
-          <div class="oli-check">✓</div>
+        <label class="opt-li" data-val="300_600"><input type="radio" name="pago" value="300_600"/>
+          <div class="oli-ico">💛</div>
+          <div class="oli-b"><strong>Entre $300.000 y $600.000</strong><p>Ingreso moderado. Me sirve combinar subsidio + crédito bancario.</p></div>
+          <div class="oli-ck">✓</div>
         </label>
-        <label class="opt-list-item" data-val="600_1000">
-          <input type="radio" name="pago" value="600_1000"/>
-          <div class="oli-icon">🧡</div>
-          <div class="oli-body"><strong>Entre $600.000 y $1.000.000/mes</strong><p>Tengo capacidad de crédito. Quiero la mejor opción de inversión.</p></div>
-          <div class="oli-check">✓</div>
+        <label class="opt-li" data-val="600_1000"><input type="radio" name="pago" value="600_1000"/>
+          <div class="oli-ico">🧡</div>
+          <div class="oli-b"><strong>Entre $600.000 y $1.000.000</strong><p>Tengo capacidad de crédito. Quiero la mejor opción de inversión.</p></div>
+          <div class="oli-ck">✓</div>
         </label>
-        <label class="opt-list-item" data-val="mas1000">
-          <input type="radio" name="pago" value="mas1000"/>
-          <div class="oli-icon">❤️</div>
-          <div class="oli-body"><strong>Más de $1.000.000/mes</strong><p>Tengo buen salario. Quiero la mejor ubicación y más espacio.</p></div>
-          <div class="oli-check">✓</div>
+        <label class="opt-li" data-val="mas1000"><input type="radio" name="pago" value="mas1000"/>
+          <div class="oli-ico">❤️</div>
+          <div class="oli-b"><strong>Más de $1.000.000</strong><p>Buen salario. Quiero el mejor lote o la mejor ubicación.</p></div>
+          <div class="oli-ck">✓</div>
         </label>
       </div>
-      <button class="btn-step-next" id="btn2" disabled onclick="goStep(3)">
-        Continuar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <button class="btn-next" id="btn2" disabled onclick="goStep(3)">Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
 
-    <!-- PASO 3: Perfil -->
+    <!-- PASO 3 -->
     <div class="survey-step" id="step3">
       <button class="btn-back" onclick="goStep(2)">← Volver</button>
-      <div class="step-label"><span class="step-num">3</span> ¿Cuál es tu situación actual?</div>
-      <p class="step-note">Esto nos permite conectarte con los subsidios para los que SÍ clasificas.</p>
-      <div class="options-grid options-grid-3">
-        <label class="opt-card opt-compact" data-val="empleado_oficial">
-          <input type="radio" name="perfil" value="empleado_oficial"/>
-          <div class="opt-icon">🏛</div>
-          <strong>Empleado oficial</strong>
-          <p>Alcaldía, Gobernación, Secretaría, Hospital público</p>
-          <div class="opt-check">✓</div>
+      <div class="step-label"><span class="step-num">3</span> ¿A qué te dedicas?</div>
+      <p class="step-hint">Esto nos permite conectarte con los subsidios para los que sí clasificas.</p>
+      <div class="options-grid grid3">
+        <label class="opt-card opt-compact" data-val="empleado_oficial"><input type="radio" name="perfil" value="empleado_oficial"/>
+          <div class="opt-ico">🏛</div><strong>Empleado oficial</strong>
+          <p>Alcaldía, Gobernación, colegio o hospital público</p><div class="opt-check">✓</div>
         </label>
-        <label class="opt-card opt-compact" data-val="empleado_empresa">
-          <input type="radio" name="perfil" value="empleado_empresa"/>
-          <div class="opt-icon">💼</div>
-          <strong>Empleado empresa privada</strong>
-          <p>Trabajo con contrato y pago caja de compensación</p>
-          <div class="opt-check">✓</div>
+        <label class="opt-card opt-compact" data-val="empleado_empresa"><input type="radio" name="perfil" value="empleado_empresa"/>
+          <div class="opt-ico">💼</div><strong>Empleado empresa privada</strong>
+          <p>Contrato y pago de caja de compensación</p><div class="opt-check">✓</div>
         </label>
-        <label class="opt-card opt-compact" data-val="independiente">
-          <input type="radio" name="perfil" value="independiente"/>
-          <div class="opt-icon">🛒</div>
-          <strong>Independiente / Comerciante</strong>
-          <p>Tendero, vendedor, trabajo por cuenta propia</p>
-          <div class="opt-check">✓</div>
+        <label class="opt-card opt-compact" data-val="independiente"><input type="radio" name="perfil" value="independiente"/>
+          <div class="opt-ico">🛒</div><strong>Independiente</strong>
+          <p>Tendero, vendedor, trabajo por cuenta propia</p><div class="opt-check">✓</div>
         </label>
-        <label class="opt-card opt-compact" data-val="mototaxista">
-          <input type="radio" name="perfil" value="mototaxista"/>
-          <div class="opt-icon">🏍</div>
-          <strong>Mototaxista / Transporte</strong>
-          <p>Ingresos informales pero constantes</p>
-          <div class="opt-check">✓</div>
+        <label class="opt-card opt-compact" data-val="mototaxista"><input type="radio" name="perfil" value="mototaxista"/>
+          <div class="opt-ico">🏍</div><strong>Mototaxista / Transporte</strong>
+          <p>Ingresos informales pero constantes</p><div class="opt-check">✓</div>
         </label>
-        <label class="opt-card opt-compact" data-val="madre_cabeza">
-          <input type="radio" name="perfil" value="madre_cabeza"/>
-          <div class="opt-icon">👩‍👧</div>
-          <strong>Madre / Padre cabeza de hogar</strong>
-          <p>Soy responsable único de mi familia</p>
-          <div class="opt-check">✓</div>
+        <label class="opt-card opt-compact" data-val="madre_cabeza"><input type="radio" name="perfil" value="madre_cabeza"/>
+          <div class="opt-ico">👩‍👧</div><strong>Cabeza de hogar</strong>
+          <p>Responsable único de mi familia</p><div class="opt-check">✓</div>
         </label>
-        <label class="opt-card opt-compact" data-val="otro">
-          <input type="radio" name="perfil" value="otro"/>
-          <div class="opt-icon">✨</div>
-          <strong>Otro perfil</strong>
-          <p>Pensionado, estudiante, inversión, etc.</p>
-          <div class="opt-check">✓</div>
+        <label class="opt-card opt-compact" data-val="otro"><input type="radio" name="perfil" value="otro"/>
+          <div class="opt-ico">✨</div><strong>Otro</strong>
+          <p>Pensionado, estudiante, inversión…</p><div class="opt-check">✓</div>
         </label>
       </div>
-      <button class="btn-step-next" id="btn3" disabled onclick="goStep(4)">
-        Continuar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <button class="btn-next" id="btn3" disabled onclick="goStep(4)">Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
 
-    <!-- PASO 4: Ciudad + subsidio -->
+    <!-- PASO 4 -->
     <div class="survey-step" id="step4">
       <button class="btn-back" onclick="goStep(3)">← Volver</button>
-      <div class="step-label"><span class="step-num">4</span> Un par de datos más</div>
+      <div class="step-label"><span class="step-num">4</span> Dos datos más</div>
       <div class="mini-form">
-        <div class="mini-field">
-          <label>¿En qué ciudad buscas tu vivienda?</label>
-          <div class="options-inline">
-            <label class="tag-option" data-val="Arjona"><input type="radio" name="ciudad" value="Arjona"/>📍 Arjona</label>
-            <label class="tag-option" data-val="Turbaco"><input type="radio" name="ciudad" value="Turbaco"/>📍 Turbaco</label>
-            <label class="tag-option" data-val="Cartagena"><input type="radio" name="ciudad" value="Cartagena"/>📍 Cartagena</label>
-            <label class="tag-option" data-val="Cualquiera"><input type="radio" name="ciudad" value="Cualquiera"/>🗺 Cualquiera</label>
+        <div class="mini-f">
+          <label>¿En qué municipio buscas?</label>
+          <div class="tags-row">
+            <label class="tag-opt" data-val="Arjona"><input type="radio" name="ciudad" value="Arjona"/>📍 Arjona</label>
+            <label class="tag-opt" data-val="Turbaco"><input type="radio" name="ciudad" value="Turbaco"/>📍 Turbaco</label>
+            <label class="tag-opt" data-val="Cartagena"><input type="radio" name="ciudad" value="Cartagena"/>📍 Cartagena</label>
+            <label class="tag-opt" data-val="Cualquiera"><input type="radio" name="ciudad" value="Cualquiera"/>🗺 Cualquiera</label>
           </div>
         </div>
-        <div class="mini-field">
-          <label>¿Tienes en mente solicitar el subsidio de vivienda?</label>
-          <div class="options-inline">
-            <label class="tag-option" data-val="si_subsidio"><input type="radio" name="subsidio" value="si_subsidio"/>✅ Sí, me interesa</label>
-            <label class="tag-option" data-val="quiero_saber"><input type="radio" name="subsidio" value="quiero_saber"/>🤔 Quiero aprender cómo</label>
-            <label class="tag-option" data-val="no_subsidio"><input type="radio" name="subsidio" value="no_subsidio"/>❌ No aplico / No me interesa</label>
+        <div class="mini-f">
+          <label>¿Te interesa el subsidio del gobierno?</label>
+          <div class="tags-row">
+            <label class="tag-opt" data-val="si"><input type="radio" name="subsidio_interes" value="si"/>✅ Sí, me interesa</label>
+            <label class="tag-opt" data-val="aprender"><input type="radio" name="subsidio_interes" value="aprender"/>🤔 Quiero aprender cómo</label>
+            <label class="tag-opt" data-val="no"><input type="radio" name="subsidio_interes" value="no"/>❌ No me interesa</label>
           </div>
         </div>
-        <div class="mini-field">
-          <label>¿Cómo te enteraste de este proyecto?</label>
-          <div class="options-inline">
-            <label class="tag-option" data-val="alcaldia"><input type="radio" name="origen" value="alcaldia"/>🏛 Alcaldía</label>
-            <label class="tag-option" data-val="educacion"><input type="radio" name="origen" value="educacion"/>📚 Sec. Educación</label>
-            <label class="tag-option" data-val="redes"><input type="radio" name="origen" value="redes"/>📱 Redes sociales</label>
-            <label class="tag-option" data-val="amigo"><input type="radio" name="origen" value="amigo"/>👥 Un amigo</label>
-            <label class="tag-option" data-val="telegram"><input type="radio" name="origen" value="telegram"/>✈️ Telegram</label>
+        <div class="mini-f">
+          <label>¿Cómo te enteraste?</label>
+          <div class="tags-row">
+            <label class="tag-opt" data-val="alcaldia"><input type="radio" name="origen" value="alcaldia"/>🏛 Alcaldía</label>
+            <label class="tag-opt" data-val="educacion"><input type="radio" name="origen" value="educacion"/>📚 Sec. Educación</label>
+            <label class="tag-opt" data-val="redes"><input type="radio" name="origen" value="redes"/>📱 Redes sociales</label>
+            <label class="tag-opt" data-val="amigo"><input type="radio" name="origen" value="amigo"/>👥 Un amigo</label>
+            <label class="tag-opt" data-val="telegram"><input type="radio" name="origen" value="telegram"/>✈️ Telegram</label>
           </div>
         </div>
       </div>
-      <button class="btn-step-next" id="btn4" onclick="goStep(5)">
-        Casi listo — registrarme <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <button class="btn-next" id="btn4" onclick="goStep(5)">Registrarme y recibir mi bono <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
 
-    <!-- PASO 5: DATOS + BONO FUNDADOR -->
+    <!-- PASO 5 -->
     <div class="survey-step" id="step5">
       <button class="btn-back" onclick="goStep(4)">← Volver</button>
-
       <div class="founder-card">
-        <div class="founder-badge">🎁 Bono Fundador</div>
-        <h3>¡Ya casi tienes tu bono!</h3>
-        <p>Deja tus datos para reservar tu lugar. Los primeros <strong>100 registrados</strong> reciben un bono de <strong>$500.000</strong> para la cuota inicial cuando el proyecto abra.</p>
-        <div class="founder-perks">
-          <div class="perk">🥇 Prioridad para elegir el mejor lote o casa</div>
-          <div class="perk">💰 Bono de $500.000 para cuota inicial</div>
-          <div class="perk">📊 Resultados completos de esta encuesta</div>
-          <div class="perk">📲 Tips diarios de subsidios en Telegram</div>
+        <div class="fc-badge">🎁 Bono Fundador — $500.000</div>
+        <h3>¡Ya casi está!</h3>
+        <p>Los primeros <strong>100 registrados</strong> reciben un bono de <strong>$500.000</strong> que se descuenta de la cuota inicial cuando el proyecto abra.</p>
+        <div class="fc-perks">
+          <span>🥇 Primero en elegir lote o casa</span>
+          <span>💰 $500.000 descontados de tu cuota</span>
+          <span>📲 Tips diarios en Telegram</span>
+          <span>📊 Resultados de esta encuesta</span>
         </div>
       </div>
-
       <form class="lead-form" id="leadForm" name="contacto" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contacto"/>
         <input type="hidden" name="bot-field"/>
@@ -378,184 +438,128 @@
         <input type="hidden" name="pago" id="h_pago"/>
         <input type="hidden" name="perfil" id="h_perfil"/>
         <input type="hidden" name="ciudad" id="h_ciudad"/>
-        <input type="hidden" name="subsidio" id="h_subsidio"/>
+        <input type="hidden" name="subsidio_interes" id="h_subsidio"/>
         <input type="hidden" name="origen" id="h_origen"/>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nombre">Nombre completo *</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required autocomplete="name"/>
-          </div>
+        <div class="f-group">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required autocomplete="name"/>
         </div>
-        <div class="form-row two">
-          <div class="form-group">
-            <label for="telefono">WhatsApp / Celular *</label>
+        <div class="f-row">
+          <div class="f-group">
+            <label for="telefono">WhatsApp *</label>
             <input type="tel" id="telefono" name="telefono" placeholder="3XX XXX XXXX" required autocomplete="tel"/>
           </div>
-          <div class="form-group">
-            <label for="correo">Correo electrónico</label>
+          <div class="f-group">
+            <label for="correo">Correo (opcional)</label>
             <input type="email" id="correo" name="correo" placeholder="tu@correo.com" autocomplete="email"/>
           </div>
         </div>
-
         <button type="submit" class="btn-submit" id="btnSubmit">
-          <span class="btn-text">
-            🎁 Registrarme y recibir mi bono
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-          <span class="btn-loading" style="display:none">Enviando...</span>
+          <span class="btn-text">🎁 Registrarme y recibir mi bono</span>
+          <span class="btn-loading" style="display:none">Enviando…</span>
         </button>
-        <p class="form-privacy">🔒 Tus datos son privados. Solo los usaremos para contactarte sobre el proyecto.</p>
+        <p class="f-privacy">🔒 Tus datos son privados. Solo te contactamos sobre este proyecto.</p>
       </form>
     </div>
 
-    <!-- PASO 6: ÉXITO -->
+    <!-- PASO 6 ÉXITO -->
     <div class="survey-step success-step" id="step6">
-      <div class="success-anim">🎉</div>
+      <div class="success-ico">🎉</div>
       <h2>¡Ya eres Fundador!</h2>
-      <p>Quedaste registrado en el grupo de los primeros 100. Te contactaremos cuando abramos con tu <strong>bono de $500.000</strong> listo.</p>
-
-      <div class="success-next">
-        <p>Mientras tanto, únete a nuestro canal de Telegram para recibir:</p>
+      <p>Quedaste registrado. Te contactamos cuando abramos con tu <strong>bono de $500.000</strong> listo para aplicar.</p>
+      <div class="success-box">
+        <p><strong>Mientras tanto únete a Telegram:</strong></p>
         <ul>
-          <li>📌 Tips diarios de subsidios y ahorro</li>
-          <li>📊 Los resultados de esta encuesta</li>
-          <li>🔔 Notificación el día que abramos</li>
+          <li>📌 Tip diario de subsidios y ahorro</li>
+          <li>📊 Resultados de esta encuesta</li>
+          <li>🔔 Aviso el día que abramos</li>
         </ul>
         <a href="https://t.me/TU_CANAL_AQUI" target="_blank" rel="noopener" class="btn-tg-big">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
-          Unirme al canal de Telegram
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
+          Unirme al canal
         </a>
-        <p class="success-share">¿Conoces a alguien que también busca vivienda?</p>
-        <button class="btn-share" id="btnShare">📤 Compartir este formulario</button>
+        <button class="btn-share" id="btnShare">📤 Compartir con un amigo</button>
       </div>
     </div>
 
-    <!-- Barra de progreso -->
     <div class="progress-bar-wrap" id="progressWrap">
-      <div class="progress-bar-track">
-        <div class="progress-bar-fill" id="progressFill"></div>
-      </div>
-      <span class="progress-label" id="progressLabel">Paso 1 de 5</span>
+      <div class="pb-track"><div class="pb-fill" id="pbFill"></div></div>
+      <span class="pb-label" id="pbLabel">Paso 1 de 5</span>
     </div>
-
   </div>
 </section>
 
-<!-- ░░ SECCIÓN: VIVIENDA PROGRESIVA EN DETALLE ░░ -->
+<!-- ░░ VIVIENDA PROGRESIVA DETALLE ░░ -->
 <section class="section section-cream" id="progresiva">
   <div class="container">
     <div class="section-tag">¿Cómo funciona?</div>
-    <h2 class="section-title">Vivienda Progresiva:<br/><em>creces cuando tú decides</em></h2>
-    <p class="section-sub">El primer piso está listo para habitar. La estructura ya viene diseñada y preparada para que tú —cuando tengas más dinero— construyas el segundo piso sin costos adicionales de demolición ni rediseño.</p>
-
-    <div class="stages-detail">
-
-      <div class="stage-d">
-        <div class="stage-d-header">
-          <div class="stage-d-num">Etapa 1</div>
-          <div class="stage-d-title">Entrega · Primer piso</div>
-          <div class="stage-d-m2">48 m²</div>
-        </div>
-        <!-- Plano esquemático -->
+    <h2 class="section-title">Empiezas a vivir hoy.<br/><em>Creces cuando tú decides.</em></h2>
+    <p class="section-sub">El primer piso sale listo para habitar. La estructura ya viene calculada para recibir el segundo piso. No hay que demoler ni rediseñar. Tú decides cuándo amplías.</p>
+    <div class="stages-v">
+      <div class="stage-vd">
+        <div class="stage-vd-hdr"><span class="sv-tag">Entrega</span><span class="sv-title">Primer piso — 48 m²</span><span class="sv-m2">Listo para vivir ✓</span></div>
         <div class="floor-plan">
-          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="10" width="260" height="180" rx="4" fill="#FAF6F0" stroke="#C2610A" stroke-width="2"/>
-            <!-- sala -->
-            <rect x="18" y="18" width="100" height="80" rx="2" fill="#C2610A" opacity=".08" stroke="#C2610A" stroke-width="1"/>
-            <text x="58" y="62" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif" font-weight="bold">Sala /</text>
-            <text x="58" y="76" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif" font-weight="bold">Comedor</text>
-            <!-- cocina -->
-            <rect x="126" y="18" width="70" height="80" rx="2" fill="#C2610A" opacity=".06" stroke="#C2610A" stroke-width="1"/>
-            <text x="161" y="62" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif">Cocina</text>
-            <!-- hab 1 -->
-            <rect x="18" y="106" width="80" height="76" rx="2" fill="#1C3557" opacity=".07" stroke="#1C3557" stroke-width="1"/>
-            <text x="58" y="148" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Hab. 1</text>
-            <!-- baño -->
-            <rect x="106" y="106" width="50" height="35" rx="2" fill="#1C3557" opacity=".07" stroke="#1C3557" stroke-width="1"/>
-            <text x="131" y="128" text-anchor="middle" font-size="9" fill="#1C3557" font-family="sans-serif">Baño</text>
-            <!-- hab 2 -->
-            <rect x="106" y="148" width="90" height="38" rx="2" fill="#1C3557" opacity=".07" stroke="#1C3557" stroke-width="1"/>
-            <text x="151" y="172" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Hab. 2</text>
-            <!-- espera 2do piso -->
-            <rect x="204" y="18" width="58" height="168" rx="2" fill="#C2610A" opacity=".04" stroke="#C2610A" stroke-width="1" stroke-dasharray="5,3"/>
-            <text x="233" y="95" text-anchor="middle" font-size="9" fill="#C2610A" font-family="sans-serif">Listo</text>
-            <text x="233" y="107" text-anchor="middle" font-size="9" fill="#C2610A" font-family="sans-serif">para</text>
-            <text x="233" y="119" text-anchor="middle" font-size="9" fill="#C2610A" font-family="sans-serif">crecer</text>
+          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="304" height="184" rx="6" fill="#FAF6F0" stroke="#C2610A" stroke-width="2"/>
+            <rect x="20" y="20" width="116" height="88" rx="3" fill="#fff" stroke="#C2610A" stroke-width="1.5"/>
+            <text x="78" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#C2610A" font-family="sans-serif">Sala</text>
+            <text x="78" y="83" text-anchor="middle" font-size="13" fill="#C2610A" font-family="sans-serif">Comedor</text>
+            <rect x="144" y="20" width="80" height="88" rx="3" fill="#fff" stroke="#C2610A" stroke-width="1.5"/>
+            <text x="184" y="69" text-anchor="middle" font-size="13" fill="#C2610A" font-family="sans-serif">Cocina</text>
+            <rect x="20" y="116" width="90" height="68" rx="3" fill="#1C3557" opacity=".08" stroke="#1C3557" stroke-width="1.5"/>
+            <text x="65" y="155" text-anchor="middle" font-size="13" fill="#1C3557" font-family="sans-serif">Hab. 1</text>
+            <rect x="118" y="116" width="58" height="36" rx="3" fill="#1C3557" opacity=".06" stroke="#1C3557" stroke-width="1.5"/>
+            <text x="147" y="138" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Baño</text>
+            <rect x="118" y="158" width="106" height="26" rx="3" fill="#1C3557" opacity=".06" stroke="#1C3557" stroke-width="1.5"/>
+            <text x="171" y="175" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Hab. 2</text>
+            <rect x="232" y="20" width="72" height="172" rx="3" fill="#C2610A" opacity=".05" stroke="#C2610A" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="268" y="100" text-anchor="middle" font-size="10" fill="#C2610A" font-family="sans-serif">Listo para</text>
+            <text x="268" y="114" text-anchor="middle" font-size="10" fill="#C2610A" font-family="sans-serif">el 2° piso</text>
           </svg>
         </div>
-        <div class="stage-d-info">
-          <div class="stage-d-badge ready">✓ Listo para vivir</div>
-          <ul>
-            <li>Sala · comedor · cocina</li>
-            <li>2 habitaciones · 1 baño</li>
-            <li>Estructura reforzada para 2° piso</li>
-          </ul>
-        </div>
+        <ul class="plan-items"><li>Sala · comedor · cocina</li><li>2 habitaciones · 1 baño</li><li>Estructura reforzada incluida</li></ul>
       </div>
-
       <div class="stage-arrow-v">
-        <svg width="24" height="40" viewBox="0 0 24 40"><path d="M12 0v32M5 26l7 7 7-7" stroke="#C2610A" stroke-width="2" fill="none"/></svg>
-        Amplías cuando quieras
+        <svg width="24" height="36" viewBox="0 0 24 36"><path d="M12 0v28M5 22l7 7 7-7" stroke="#C2610A" stroke-width="2" fill="none"/></svg>
+        <span>Tú decides cuándo</span>
       </div>
-
-      <div class="stage-d">
-        <div class="stage-d-header">
-          <div class="stage-d-num">Etapa 2</div>
-          <div class="stage-d-title">Tu ampliación · Segundo piso</div>
-          <div class="stage-d-m2">+56 m²</div>
-        </div>
+      <div class="stage-vd">
+        <div class="stage-vd-hdr"><span class="sv-tag future">Tu ritmo</span><span class="sv-title">Segundo piso — +56 m²</span><span class="sv-m2">Total: 200 m²</span></div>
         <div class="floor-plan">
-          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="10" width="260" height="180" rx="4" fill="#FAF6F0" stroke="#1C3557" stroke-width="2"/>
-            <!-- hab 3 -->
-            <rect x="18" y="18" width="100" height="80" rx="2" fill="#1C3557" opacity=".1" stroke="#1C3557" stroke-width="1"/>
-            <text x="68" y="62" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Hab. 3</text>
-            <!-- hab 4 -->
-            <rect x="126" y="18" width="70" height="80" rx="2" fill="#1C3557" opacity=".07" stroke="#1C3557" stroke-width="1"/>
-            <text x="161" y="62" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Hab. 4</text>
-            <!-- baño 2 -->
-            <rect x="18" y="106" width="80" height="40" rx="2" fill="#C2610A" opacity=".08" stroke="#C2610A" stroke-width="1"/>
-            <text x="58" y="130" text-anchor="middle" font-size="10" fill="#C2610A" font-family="sans-serif">Baño 2</text>
-            <!-- sala estudio -->
-            <rect x="18" y="153" width="178" height="37" rx="2" fill="#1C3557" opacity=".06" stroke="#1C3557" stroke-width="1"/>
-            <text x="107" y="176" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Sala de estudio / Estar</text>
-            <!-- terraza -->
-            <rect x="204" y="18" width="58" height="168" rx="2" fill="#C2610A" opacity=".08" stroke="#C2610A" stroke-width="1"/>
-            <text x="233" y="107" text-anchor="middle" font-size="10" fill="#C2610A" font-family="sans-serif">Terraza</text>
+          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="304" height="184" rx="6" fill="#FAF6F0" stroke="#1C3557" stroke-width="2"/>
+            <rect x="20" y="20" width="116" height="88" rx="3" fill="#1C3557" opacity=".1" stroke="#1C3557" stroke-width="1.5"/>
+            <text x="78" y="69" text-anchor="middle" font-size="13" font-weight="bold" fill="#1C3557" font-family="sans-serif">Hab. 3</text>
+            <rect x="144" y="20" width="80" height="88" rx="3" fill="#1C3557" opacity=".07" stroke="#1C3557" stroke-width="1.5"/>
+            <text x="184" y="69" text-anchor="middle" font-size="13" fill="#1C3557" font-family="sans-serif">Hab. 4</text>
+            <rect x="20" y="116" width="90" height="45" rx="3" fill="#C2610A" opacity=".08" stroke="#C2610A" stroke-width="1.5"/>
+            <text x="65" y="143" text-anchor="middle" font-size="13" fill="#C2610A" font-family="sans-serif">Baño 2</text>
+            <rect x="20" y="166" width="204" height="26" rx="3" fill="#1C3557" opacity=".06" stroke="#1C3557" stroke-width="1.5"/>
+            <text x="122" y="183" text-anchor="middle" font-size="11" fill="#1C3557" font-family="sans-serif">Sala de estudio · Estar</text>
+            <rect x="232" y="20" width="72" height="172" rx="3" fill="#C2610A" opacity=".1" stroke="#C2610A" stroke-width="1.5"/>
+            <text x="268" y="107" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif">Terraza</text>
           </svg>
         </div>
-        <div class="stage-d-info">
-          <div class="stage-d-badge future">📐 Tú decides cuándo</div>
-          <ul>
-            <li>2 habitaciones adicionales</li>
-            <li>Baño completo · sala de estar</li>
-            <li>Terraza · total 200m² finales</li>
-          </ul>
-        </div>
+        <ul class="plan-items"><li>2 habitaciones adicionales</li><li>Baño completo · sala de estar</li><li>Terraza</li></ul>
       </div>
     </div>
-
-    <div class="progresiva-cta">
+    <div class="prog-cta">
       <a href="#encuesta" class="btn-primary">Me interesa esta opción →</a>
-      <a href="https://t.me/TU_BOT_AQUI" target="_blank" class="btn-tg-sm">Preguntar al Bot</a>
+      <a href="#calcular" class="btn-link">Ver cuánto me costaría ↓</a>
     </div>
   </div>
 </section>
 
-<!-- ░░ TIPS ░░ -->
+<!-- TIPS -->
 <section class="section section-light" id="tips">
   <div class="container">
     <div class="section-tag">Gratis · Cada día</div>
     <h2 class="section-title">Tips para<br/><em>conseguir tu casa</em></h2>
     <div class="tips-grid" id="tipsGrid"></div>
-    <div class="tips-tg-bar">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
-      <div>
-        <strong>Recibe un tip diario en Telegram</strong>
-        <p>Subsidios, ahorro, documentos, bancos… explicado fácil.</p>
-      </div>
-      <a href="https://t.me/TU_CANAL_AQUI" target="_blank" class="btn-tg-sm white">Unirme al canal</a>
+    <div class="tg-bar">
+      <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#0088cc"/><path d="M22 8C14.27 8 8 14.27 8 22s6.27 14 14 14 14-6.27 14-14S29.73 8 22 8zm7.56 9.58-3.37 15.9c-.24 1.1-.9 1.37-1.8.85l-5-3.69-2.4 2.32c-.27.27-.5.5-1.01.5l.35-5.08 9.24-8.35c.4-.35-.09-.55-.62-.2L11.82 26.16l-4.93-1.54c-1.07-.33-1.09-1.07.22-1.58l19.25-7.42c.9-.33 1.67.22.87 1.5-.01 0-.01-.01 0 0z" fill="#fff"/></svg>
+      <div><strong>Un tip diario en Telegram</strong><p>Subsidios, ahorro, documentos, bancos — explicado fácil.</p></div>
+      <a href="https://t.me/TU_CANAL_AQUI" target="_blank" rel="noopener" class="btn-tg-sm">Unirme al canal</a>
     </div>
   </div>
 </section>
@@ -567,27 +571,25 @@
 </a>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <div>
-      <div class="nav-logo" style="margin-bottom:.5rem">
+  <div class="container">
+    <div class="footer-top">
+      <div class="nav-logo" style="gap:.5rem">
         <span class="logo-mark">AP</span>
-        <span class="logo-text">Proyecto <strong>Arjona</strong></span>
+        <span class="logo-text" style="color:#fff">Proyecto <strong>Arjona</strong></span>
       </div>
-      <p style="color:rgba(255,255,255,.4);font-size:.75rem;max-width:340px">Proyecto en etapa de pre-lanzamiento. Las imágenes son de carácter referencial generadas con IA. Precios y subsidios sujetos a disponibilidad y requisitos.</p>
+      <div class="footer-links">
+        <a href="#encuesta">Registrarme</a>
+        <a href="#calcular">Calculadora</a>
+        <a href="#progresiva">Vivienda Progresiva</a>
+        <a href="https://t.me/TU_BOT_AQUI" target="_blank">Bot Telegram</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="#encuesta">Participar</a>
-      <a href="#progresiva">Vivienda Progresiva</a>
-      <a href="#tips">Consejos</a>
-      <a href="https://t.me/TU_BOT_AQUI" target="_blank">Bot Telegram</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 · Proyecto Arjona · Arjona, Bolívar, Colombia · Proyecto legal y registrado</p>
+    <p class="footer-legal">© 2026 · Proyecto Arjona · Arjona, Bolívar, Colombia · Pre-lanzamiento · Precios y subsidios referenciales sujetos a disponibilidad.</p>
   </div>
 </footer>
 
 <script src="js/tips.js"></script>
 <script src="js/survey.js"></script>
+<script src="js/calc.js"></script>
 </body>
 </html>

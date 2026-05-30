@@ -8,7 +8,6 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Cache-Control = "public, max-age=3600"
 
 [[headers]]
   for = "/css/*"
@@ -20,7 +19,7 @@
     [headers.values]
     Cache-Control = "public, max-age=86400"
 
-# URLs amigables por ciudad y tipo
+# URLs de campaña segmentadas
 [[redirects]]
   from = "/progresiva"
   to   = "/?tipo=vivienda_progresiva#encuesta"
@@ -32,6 +31,16 @@
   status = 302
 
 [[redirects]]
+  from = "/lote-grande"
+  to   = "/?tipo=lote_800#encuesta"
+  status = 302
+
+[[redirects]]
+  from = "/casa"
+  to   = "/?tipo=casa_terminada#encuesta"
+  status = 302
+
+[[redirects]]
   from = "/arjona"
   to   = "/?ciudad=Arjona#encuesta"
   status = 302
@@ -39,4 +48,14 @@
 [[redirects]]
   from = "/turbaco"
   to   = "/?ciudad=Turbaco#encuesta"
+  status = 302
+
+[[redirects]]
+  from = "/alcaldia"
+  to   = "/?origen=alcaldia#encuesta"
+  status = 302
+
+[[redirects]]
+  from = "/educacion"
+  to   = "/?origen=educacion#encuesta"
   status = 302

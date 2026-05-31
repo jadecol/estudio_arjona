@@ -1,4 +1,4 @@
-// survey.js v5 — Co-creación + 4 perfiles + forma de pago + cierre dual Telegram/WA
+// survey.js v6 — Bug fixes: bindCards dual-listener + anim sin opt-card
 (function () {
   'use strict';
 
@@ -6,15 +6,15 @@
     tipo: '', pago: '', perfil: '', forma_pago: '',
     ciudad: '', subsidio_interes: '', origen: '',
   };
-  const TOTAL = 6; // 6 pasos visibles; paso 7 = éxito
+  const TOTAL = 6;
 
   // ── Catálogo de productos ─────────────────────────────────────────────────
   const PRODUCTOS = {
-    lote_200: { label: 'Lote de 200 m²',                         precio: '$22.000.000',   subsidio: false, emoji: '🟫' },
-    lote_800: { label: 'Lote de 800 m²',                         precio: '$80.000.000',   subsidio: false, emoji: '🟧' },
-    prog_200: { label: 'Casa 48m² en lote 200m² (Progresiva)',   precio: '$143.574.210',  subsidio: true,  emoji: '🏗️' },
-    prog_800: { label: 'Casa 56m² en lote 800m² (Progresiva)',   precio: '$185.000.000',  subsidio: true,  emoji: '🏠' },
-    terminada:{ label: 'Vivienda 100% terminada',                precio: '$220.000.000',  subsidio: true,  emoji: '🏡' },
+    lote_200: { label: 'Lote de 200 m²',                        precio: '$22.000.000',  subsidio: false, emoji: '🟫' },
+    lote_800: { label: 'Lote de 800 m²',                        precio: '$80.000.000',  subsidio: false, emoji: '🟧' },
+    prog_200: { label: 'Casa 48m² en lote 200m² (Progresiva)',  precio: '$143.574.210', subsidio: true,  emoji: '🏗️' },
+    prog_800: { label: 'Casa 56m² en lote 800m² (Progresiva)',  precio: '$185.000.000', subsidio: true,  emoji: '🏠' },
+    terminada:{ label: 'Vivienda 100% terminada',               precio: '$220.000.000', subsidio: true,  emoji: '🏡' },
   };
 
   // ── Labels legibles ───────────────────────────────────────────────────────
@@ -37,16 +37,11 @@
     contado:          'De contado',
   };
   const SUBSIDIO_LABELS = {
-    si:       'Sí, le interesa',
-    aprender: 'Quiere aprender cómo',
-    no:       'No le interesa',
+    si: 'Sí, le interesa', aprender: 'Quiere aprender cómo', no: 'No le interesa',
   };
   const ORIGEN_LABELS = {
-    alcaldia:  'Alcaldía',
-    educacion: 'Sec. Educación',
-    redes:     'Redes sociales',
-    amigo:     'Un amigo',
-    telegram:  'Telegram',
+    alcaldia: 'Alcaldía', educacion: 'Sec. Educación', redes: 'Redes sociales',
+    amigo: 'Un amigo', telegram: 'Telegram',
   };
 
   // ── Navegación entre pasos ────────────────────────────────────────────────
@@ -61,7 +56,7 @@
       window.scrollTo({ top, behavior: 'smooth' });
     }
     updateProgress(n);
-    if (n === 6) syncHidden(); // paso 6 = formulario
+    if (n === 6) syncHidden();
     if (n === 7) updateCounter();
   };
 
@@ -82,18 +77,39 @@
     });
   }
 
-  // ── Binding de tarjetas ───────────────────────────────────────────────────
+  // ── Binding de tarjetas — DUAL LISTENER (click + radio change) ────────────
+  // FIX: initScrollAnim ponía opacity:0 en opt-card/opt-li. Solución:
+  // 1. Removemos opt-card/opt-li de initScrollAnim (ver abajo).
+  // 2. Usamos AMBOS: click en la tarjeta Y change en el radio,
+  //    con un handler compartido para evitar doble-ejecución.
   function bindCards(stepId, name, btnId) {
     const step = document.getElementById(stepId);
     if (!step) return;
+
+    function activate(value, selectedCard) {
+      step.querySelectorAll('.opt-card, .opt-li').forEach(c => c.classList.remove('selected'));
+      if (selectedCard) selectedCard.classList.add('selected');
+      answers[name] = value;
+      const btn = document.getElementById(btnId);
+      if (btn) { btn.disabled = false; btn.classList.add('btn-ready'); }
+    }
+
+    // Listener en la tarjeta completa (label → clic visual)
     step.querySelectorAll('.opt-card, .opt-li').forEach(card => {
       card.addEventListener('click', () => {
-        step.querySelectorAll('.opt-card, .opt-li').forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
         const inp = card.querySelector('input[type="radio"]');
-        if (inp) { inp.checked = true; answers[name] = inp.value; }
-        const btn = document.getElementById(btnId);
-        if (btn) btn.disabled = false;
+        if (!inp) return;
+        inp.checked = true;
+        activate(inp.value, card);
+      });
+    });
+
+    // Fallback: escuchar `change` en el radio directamente
+    // (cubre casos donde el clic en el label no burbujea al handler de arriba)
+    step.querySelectorAll(`input[type="radio"][name="${name}"]`).forEach(inp => {
+      inp.addEventListener('change', () => {
+        const card = inp.closest('.opt-card, .opt-li');
+        activate(inp.value, card);
       });
     });
   }
@@ -148,7 +164,7 @@
 
     const payload = new URLSearchParams({
       'form-name': 'contacto', nombre, telefono,
-      correo: form.correo?.value.trim() || '',
+      correo:           form.correo?.value.trim() || '',
       tipo:             answers.tipo,
       pago:             answers.pago,
       perfil:           answers.perfil,
@@ -190,27 +206,31 @@
       `🎁 Subsidio aplica: ${subText}\n\n` +
       `💵 Capacidad de pago: ${PAGO_LABELS[answers.pago] || answers.pago || '—'}\n` +
       `👷 Perfil: ${PERFIL_LABELS[answers.perfil] || answers.perfil || '—'}\n` +
-      `💳 Forma de pago preferida: ${FORMA_PAGO_LABELS[answers.forma_pago] || answers.forma_pago || '—'}\n` +
+      `💳 Forma de pago: ${FORMA_PAGO_LABELS[answers.forma_pago] || answers.forma_pago || '—'}\n` +
       `📍 Ciudad buscada: ${answers.ciudad || '—'}\n` +
-      `🎯 Interés en subsidio: ${SUBSIDIO_LABELS[answers.subsidio_interes] || answers.subsidio_interes || '—'}\n` +
+      `🎯 Subsidio interés: ${SUBSIDIO_LABELS[answers.subsidio_interes] || answers.subsidio_interes || '—'}\n` +
       `📣 Cómo llegó: ${ORIGEN_LABELS[answers.origen] || answers.origen || '—'}\n\n` +
       `🕐 ${fecha}`
     );
 
-    // Actualizar botón WA del paso de éxito con el mensaje pre-llenado
-    const btnWA = document.getElementById('btnWA');
-    if (btnWA) {
-      const waBase = WA ? `https://wa.me/${WA}` : 'https://wa.me/';
-      btnWA.href = `${waBase}?text=${waMsg}`;
-    }
+    // Actualizar botones WA del paso de éxito y FAB
+    [document.getElementById('btnWA'), document.getElementById('fabWA')].forEach(el => {
+      if (!el) return;
+      const base = WA ? `https://wa.me/${WA}` : 'https://wa.me/';
+      el.href = `${base}?text=${waMsg}`;
+    });
 
     goStep(7);
   }
 
-  // ── Animaciones de scroll ─────────────────────────────────────────────────
+  // ── Animaciones de scroll — OJO: excluye opt-card y opt-li ───────────────
+  // MOTIVO DEL BUG: IntersectionObserver con threshold:.08 no disparaba para
+  // tarjetas de pasos ocultos (display:none), dejándolas en opacity:0.
+  // Al mostrar el paso, las tarjetas eran invisibles → sin feedback visual al clic.
   function initScrollAnim() {
     if (!window.IntersectionObserver) return;
-    const targets = document.querySelectorAll('.tip-card,.stage-vd,.opt-card,.opt-li,.calc-card');
+    // Solo animamos elementos que siempre están en el DOM visible (no dentro de pasos)
+    const targets = document.querySelectorAll('.tip-card, .stage-vd, .calc-card');
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {

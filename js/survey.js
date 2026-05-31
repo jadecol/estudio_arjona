@@ -5,7 +5,7 @@
   /* ── Estado central ──────────────────────────────────────────────────────── */
   const answers = {
     tipo: '', pago: '', perfil: '', forma_pago: '',
-    ciudad: '', subsidio_interes: '', origen: '',
+    tiempo_compra: '', subsidio_interes: '', origen: '',
   };
   const TOTAL = 6;
 
@@ -33,6 +33,10 @@
     cuotas_periodicas:'Cuotas semanales o quincenales',
     subsidio_credito:'Subsidio + crédito bancario',
     contado:'De contado',
+  };
+  const TIEMPO_LABELS = {
+    pronto:'Lo más pronto posible', '3_6_meses':'En 3 a 6 meses',
+    '1_ano':'En 1 año', mirando:'Solo estoy mirando',
   };
   const SUBSIDIO_LABELS = { si:'Sí', aprender:'Quiere aprender cómo', no:'No' };
   const ORIGEN_LABELS   = {
@@ -182,7 +186,7 @@
           'form-name':'contacto', nombre, telefono,
           correo: form.correo?.value.trim() || '',
           tipo: answers.tipo, pago: answers.pago, perfil: answers.perfil,
-          forma_pago: answers.forma_pago, ciudad: answers.ciudad,
+          forma_pago: answers.forma_pago, tiempo_compra: answers.tiempo_compra,
           subsidio_interes: answers.subsidio_interes, origen: answers.origen,
           fecha: new Date().toISOString(),
         }).toString(),
@@ -204,7 +208,7 @@
       `💵 Pago/mes: ${PAGO_LABELS[answers.pago] || '—'}\n` +
       `👷 Perfil: ${PERFIL_LABELS[answers.perfil] || '—'}\n` +
       `💳 Forma pago: ${FORMA_PAGO_LABELS[answers.forma_pago] || '—'}\n` +
-      `📍 Ciudad: ${answers.ciudad || '—'}\n` +
+      `⏳ Tiempo estimado de compra: ${TIEMPO_LABELS[answers.tiempo_compra] || '—'}\n` +
       `🎯 Subsidio interés: ${SUBSIDIO_LABELS[answers.subsidio_interes] || '—'}\n` +
       `📣 Llegó por: ${ORIGEN_LABELS[answers.origen] || '—'}\n\n` +
       `🕐 ${fecha}`
@@ -299,7 +303,7 @@
   ═══════════════════════════════════════════════════════════════════════════ */
   document.addEventListener('DOMContentLoaded', () => {
     initCardDelegation();   /* ← delegación global, reemplaza bindCards */
-    bindTags('ciudad');
+    bindTags('tiempo_compra');
     bindTags('subsidio_interes');
     bindTags('origen');
     document.getElementById('leadForm')?.addEventListener('submit', handleSubmit);

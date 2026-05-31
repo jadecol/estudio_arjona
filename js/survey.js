@@ -169,7 +169,15 @@
     const form     = e.target;
     const nombre   = form.nombre.value.trim();
     const telefono = form.telefono.value.trim();
+    const priv     = form.privacidad;
+
     if (!nombre || !telefono) return;
+    
+    if (priv && !priv.checked) {
+      alert('Por favor, autoriza el tratamiento de datos personales para continuar.');
+      priv.focus();
+      return;
+    }
 
     const btnT = form.querySelector('.btn-text');
     const btnL = form.querySelector('.btn-loading');

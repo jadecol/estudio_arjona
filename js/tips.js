@@ -1,16 +1,47 @@
-// tips.js v3 — Tips rotativos de subsidios y ahorro
+// tips.js v5 — Tips personalizados para Arjona: mototaxistas, madres cabeza, independientes, empleados oficiales
 const TIPS = [
-  { t:'Ahorra con el FNA desde ya', p:'Abre una cuenta en el Fondo Nacional del Ahorro y ahorra lo que puedas cada mes. Con solo 6 meses de ahorro puedes solicitar crédito hipotecario con tasas más bajas que cualquier banco.' },
-  { t:'¿Qué es Mi Casa Ya y cómo aplico?', p:'Mi Casa Ya te da hasta $30 millones para la cuota inicial y reduce tu tasa de interés. Aplica si tus ingresos son menores a 8 salarios mínimos. No se devuelve.' },
-  { t:'Empleados oficiales tienen ventaja real', p:'Si trabajas en la Alcaldía, Secretaría de Educación o un hospital público, pueden descontarte la cuota mensual directamente del sueldo. Eso te abre las puertas a mejores créditos.' },
-  { t:'Los documentos que debes tener listos', p:'Cédula, certificado laboral o declaración de renta (si eres independiente) y extractos bancarios de los últimos 3 meses. Empieza a organizarlos hoy, antes de que el proyecto abra.' },
-  { t:'Datacrédito no es un obstáculo', p:'Si tienes deudas pequeñas, el FNA y algunas cooperativas te financian igual. Lo importante es demostrar ingresos estables, no tener un puntaje perfecto. Consúltanos.' },
-  { t:'La Vivienda Progresiva aplica para subsidio', p:'Una vivienda de 48m² cuesta menos de 135 salarios mínimos, por eso aplica al subsidio VIS. Eso significa hasta $52 millones del gobierno que NO se devuelven.' },
-  { t:'Cuota inicial en cuotas cómodas', p:'En etapa de preventa puedes pagar la cuota inicial en mensualidades pequeñas mientras la casa se construye. No necesitas tener todo el dinero de una sola vez.' },
-  { t:'¿Qué es el VIPA?', p:'Para hogares con ingresos hasta 2 salarios mínimos, el programa VIPA puede cubrir casi el valor total de la vivienda. Si eres madre cabeza de hogar o mototaxista, pregúntanos si clasificas.' },
-  { t:'Compra en Arjona, no en Cartagena', p:'Por el mismo precio de un apartamento pequeño en Cartagena consigues un lote de 200m² en Arjona, a 15 minutos. Sin cuota de administración. Puedes ampliar y construir como quieras.' },
-  { t:'Caja de compensación familiar', p:'Si estás afiliado a Comfamiliar o Cajacopi, revisa sus programas de vivienda. Muchas cajas dan subsidios adicionales que se suman al del gobierno nacional.' },
+  {
+    t: 'Mototaxista: sí puedes tener casa propia',
+    p: 'Aunque trabajas de forma informal, puedes acceder a crédito si demuestras ingresos constantes con extractos de Nequi, Bancolombia o un ahorro en el FNA de mínimo 6 meses. Consúltanos cómo organizarlo paso a paso.',
+  },
+  {
+    t: 'Madre cabeza de familia: tienes prioridad en los subsidios',
+    p: 'Si eres cabeza de hogar, tienes acceso preferencial al subsidio Mi Casa Ya (hasta $52.5M que no se devuelven) y en algunos casos al programa VIPA, donde el gobierno puede cubrir casi toda la vivienda.',
+  },
+  {
+    t: 'Empleado oficial: la cuota sale directa del sueldo',
+    p: 'Si trabajas en la Alcaldía, Gobernación, hospital o colegio público, puedes autorizar descuento en nómina. Eso te abre puertas a mejores tasas de interés y sin trámites complicados de crédito.',
+  },
+  {
+    t: 'Vendedor independiente: así demuestras tus ingresos',
+    p: 'No necesitas contrato ni nómina. Con 3 meses de extractos bancarios o carta de contador, el FNA y cooperativas te pueden financiar igual. Lo importante es mostrar movimiento de dinero constante.',
+  },
+  {
+    t: 'Ahorra con el FNA desde hoy, aunque sea poco',
+    p: 'Con solo $100.000 al mes en el Fondo Nacional del Ahorro ya estás construyendo historial. En 6 meses tienes acceso a crédito hipotecario con tasas más bajas que cualquier banco comercial.',
+  },
+  {
+    t: 'Cuota inicial en pagos chiquitos durante la obra',
+    p: 'En etapa de preventa puedes ir pagando la cuota inicial mensualmente mientras construimos. No necesitas tener todo el dinero de un solo golpe. Entrar desde el inicio es tu mejor ventaja.',
+  },
+  {
+    t: '¿Qué es el subsidio Mi Casa Ya y quién aplica?',
+    p: 'Es plata del gobierno (hasta $52.5M) que no se devuelve. Aplica si tus ingresos son menores a 8 salarios mínimos, no tienes vivienda propia y pagas arriendo. Registro gratis en vivienda.gov.co.',
+  },
+  {
+    t: 'Lote 200m²: la entrada más accesible al barrio',
+    p: 'Con $22M ya tienes tu lote escriturado. Construyes cuando puedas, como quieras, sin cuota de administración. Es la opción ideal para quien quiere empezar sin una deuda bancaria grande.',
+  },
+  {
+    t: 'Cajacopi o Comfamiliar: subsidio extra que pocos usan',
+    p: 'Si estás afiliado a Comfamiliar o Cajacopi, tienen programas de vivienda propios que se suman al subsidio nacional. Muy poca gente los solicita. Podrías llevarte doble beneficio sin saberlo.',
+  },
+  {
+    t: 'Datacrédito no es un obstáculo definitivo',
+    p: 'Si tienes deudas pequeñas, el FNA y algunas cooperativas te financian de todas formas. Lo más importante es demostrar ingresos estables, no tener un puntaje perfecto. Consúltanos tu caso.',
+  },
 ];
+
 document.addEventListener('DOMContentLoaded', () => {
   const g = document.getElementById('tipsGrid');
   if (!g) return;

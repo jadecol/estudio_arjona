@@ -45,22 +45,22 @@
   </div>
   <div class="hero-content">
     <div class="urgency-badge animate-in" style="--d:0s">
-      <span class="pulse-dot"></span> &nbsp;Bono fundador: <strong>$500.000 para tu cuota inicial</strong>
+      <span class="pulse-dot"></span> &nbsp;Co-creación: <strong>Tus respuestas definen qué construimos</strong>
     </div>
     <h1 class="animate-in" style="--d:.08s">
-      Tu casa propia<br/>en Arjona.<br/><em>Dinos qué quieres.</em>
+      Estamos diseñando<br/>un nuevo barrio<br/><em>en Arjona.</em>
     </h1>
     <p class="hero-sub animate-in" style="--d:.18s">
-      Estamos diseñando el proyecto. <br class="show-sm"/>
-      Responde 5 preguntas, regístrate gratis<br class="show-sm"/>
-      y sé el primero en elegir cuando abramos.
+      Cuéntanos qué necesitas y cómo podrías pagarlo.<br class="show-sm"/>
+      Con tus respuestas decidimos qué construimos primero.<br class="show-sm"/>
+      Regístrate gratis y sé el primero en elegir.
     </p>
     <div class="founders-wrap animate-in" style="--d:.26s">
       <div class="founders-track"><div class="founders-fill" id="foundersBar"></div></div>
       <span class="founders-lbl"><strong id="foundersCount">53</strong> de 100 cupos fundadores ocupados</span>
     </div>
     <div class="hero-ctas animate-in" style="--d:.34s">
-      <a href="#encuesta" class="btn-start">Quiero mi bono — registrarme gratis
+      <a href="#encuesta" class="btn-start">Quiero participar — es gratis
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </a>
       <a href="#calcular" class="btn-outline-hero">¿Cuánto me costaría?</a>
@@ -82,10 +82,11 @@
 
           <!-- Selector de tipo -->
           <div class="calc-tipo">
-            <button class="calc-tipo-btn active" data-precio="22000000" data-nombre="Lote 200m²">Lote 200m²</button>
-            <button class="calc-tipo-btn" data-precio="80000000" data-nombre="Lote 800m²">Lote 800m²</button>
-            <button class="calc-tipo-btn" data-precio="143574210" data-nombre="Vivienda Progresiva">Casa Progresiva</button>
-            <button class="calc-tipo-btn" data-precio="220000000" data-nombre="Casa Terminada">Casa Terminada</button>
+            <button class="calc-tipo-btn active" data-id="lote_200">Lote 200m²</button>
+            <button class="calc-tipo-btn" data-id="lote_800">Lote 800m²</button>
+            <button class="calc-tipo-btn" data-id="prog_200">Casa 48m² / L200</button>
+            <button class="calc-tipo-btn" data-id="prog_800">Casa 56m² / L800</button>
+            <button class="calc-tipo-btn" data-id="terminada">Casa Terminada</button>
           </div>
 
           <!-- Slider de ahorro -->
@@ -100,11 +101,11 @@
           </div>
 
           <!-- Selector subsidio -->
-          <div class="calc-subsidio">
+          <div class="calc-subsidio" id="calcSubsidioSection">
             <label class="calc-label">¿Clasificas para subsidio del gobierno?</label>
             <div class="subsidio-opts">
-              <label class="sub-opt selected" data-sub="52527150">
-                <input type="radio" name="subsidio" value="52527150" checked/>
+              <label class="sub-opt" data-sub="52527150">
+                <input type="radio" name="subsidio" value="52527150"/>
                 ✅ Sí, ingresos hasta 2 SMMLV<br/><small>Subsidio hasta $52.5M</small>
               </label>
               <label class="sub-opt" data-sub="35018100">
@@ -159,154 +160,167 @@
 <section class="survey-section" id="encuesta">
   <div class="survey-container">
     <div class="survey-header">
-      <div class="section-tag light">2 minutos · Sin compromiso · Bono $500.000</div>
-      <h2>¿Qué necesitas exactamente?</h2>
-      <p>Selecciona lo que más te llama la atención. No hay respuesta incorrecta.</p>
+      <div class="section-tag light">Co-creación · 2 minutos · Sin compromiso</div>
+      <h2>Ayúdanos a diseñar<br/>este barrio</h2>
+      <p>Tus respuestas definen qué construimos. No hay respuesta incorrecta.</p>
     </div>
 
     <!-- PASO 1 -->
     <div class="survey-step active" id="step1">
       <div class="step-label"><span class="step-num">1</span> ¿Qué te gustaría comprar?</div>
-      <div class="options-grid">
+      <p class="step-hint">Selecciona la opción que más te llama la atención. No hay respuesta incorrecta.</p>
+      <div class="options-grid options-grid-5">
 
-        <!-- Lote 200m² -->
+        <!-- 1. Lote 200m² -->
         <label class="opt-card" data-val="lote_200">
           <input type="radio" name="tipo" value="lote_200"/>
           <div class="opt-visual">
             <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
               <rect x="4" y="4" width="232" height="142" rx="6" fill="#FAF6F0" stroke="#C2610A" stroke-width="1.5"/>
-              <!-- casa -->
               <rect x="20" y="50" width="90" height="70" rx="3" fill="#fff" stroke="#C2610A" stroke-width="1.5"/>
               <polygon points="65,20 110,50 20,50" fill="#C2610A" opacity=".6"/>
               <rect x="38" y="72" width="18" height="16" rx="1" fill="#C2610A" opacity=".25" stroke="#C2610A" stroke-width="1"/>
               <rect x="66" y="72" width="18" height="16" rx="1" fill="#C2610A" opacity=".25" stroke="#C2610A" stroke-width="1"/>
               <rect x="48" y="85" width="20" height="35" rx="1" fill="#C2610A" opacity=".35"/>
-              <!-- terreno libre -->
               <rect x="122" y="35" width="102" height="96" rx="3" fill="#C2610A" opacity=".05" stroke="#C2610A" stroke-width="1" stroke-dasharray="5,3"/>
-              <text x="173" y="78" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif">Jardín o</text>
-              <text x="173" y="93" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif">ampliación</text>
-              <!-- etiqueta -->
+              <text x="173" y="78" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif">Construyes</text>
+              <text x="173" y="93" text-anchor="middle" font-size="11" fill="#C2610A" font-family="sans-serif">como quieras</text>
               <rect x="14" y="126" width="80" height="16" rx="3" fill="#C2610A" opacity=".12"/>
-              <text x="54" y="138" text-anchor="middle" font-size="10" font-weight="bold" fill="#C2610A" font-family="sans-serif">200 m²</text>
+              <text x="54" y="138" text-anchor="middle" font-size="10" font-weight="bold" fill="#C2610A" font-family="sans-serif">Lote 200 m²</text>
             </svg>
           </div>
           <div class="opt-body">
             <strong>Lote de 200 m²</strong>
-            <p>Tuyo el terreno. Construyes tu casa como quieras y cuando puedas. Sin cuotas de administración.</p>
-            <div class="opt-price">Desde ~$22M</div>
+            <p>El terreno es tuyo. Construyes tu casa a tu ritmo, como quieras y cuando puedas.</p>
+            <div class="opt-price">Desde ~$22M · Sin cuota de administración</div>
           </div>
           <div class="opt-check">✓</div>
         </label>
 
-        <!-- Lote 800m² -->
+        <!-- 2. Lote 800m² -->
         <label class="opt-card" data-val="lote_800">
           <input type="radio" name="tipo" value="lote_800"/>
           <div class="opt-visual">
             <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
               <rect x="4" y="4" width="232" height="142" rx="6" fill="#FAF6F0" stroke="#8E4208" stroke-width="1.5"/>
-              <!-- casa principal -->
               <rect x="14" y="50" width="72" height="80" rx="3" fill="#fff" stroke="#C2610A" stroke-width="1.5"/>
               <polygon points="50,22 86,50 14,50" fill="#C2610A" opacity=".55"/>
               <rect x="23" y="72" width="14" height="12" rx="1" fill="#C2610A" opacity=".25" stroke="#C2610A" stroke-width="1"/>
               <rect x="46" y="72" width="14" height="12" rx="1" fill="#C2610A" opacity=".25" stroke="#C2610A" stroke-width="1"/>
               <rect x="32" y="88" width="16" height="42" rx="1" fill="#C2610A" opacity=".35"/>
-              <!-- zona extra derecha -->
               <rect x="96" y="14" width="130" height="60" rx="3" fill="#8E4208" opacity=".06" stroke="#8E4208" stroke-width="1" stroke-dasharray="4,3"/>
-              <text x="161" y="42" text-anchor="middle" font-size="10" fill="#8E4208" font-family="sans-serif">Casa de la mamá /</text>
-              <text x="161" y="56" text-anchor="middle" font-size="10" fill="#8E4208" font-family="sans-serif">negocio propio</text>
-              <!-- zona inferior -->
+              <text x="161" y="42" text-anchor="middle" font-size="10" fill="#8E4208" font-family="sans-serif">2da casa /</text>
+              <text x="161" y="56" text-anchor="middle" font-size="10" fill="#8E4208" font-family="sans-serif">negocio</text>
               <rect x="96" y="84" width="130" height="56" rx="3" fill="#8E4208" opacity=".06" stroke="#8E4208" stroke-width="1" stroke-dasharray="4,3"/>
-              <text x="161" y="116" text-anchor="middle" font-size="10" fill="#8E4208" font-family="sans-serif">Patio · zona de juegos</text>
-              <!-- etiqueta -->
+              <text x="161" y="116" text-anchor="middle" font-size="10" fill="#8E4208" font-family="sans-serif">Patio grande</text>
               <rect x="14" y="125" width="76" height="16" rx="3" fill="#8E4208" opacity=".12"/>
-              <text x="52" y="137" text-anchor="middle" font-size="10" font-weight="bold" fill="#8E4208" font-family="sans-serif">800 m²</text>
+              <text x="52" y="137" text-anchor="middle" font-size="10" font-weight="bold" fill="#8E4208" font-family="sans-serif">Lote 800 m²</text>
             </svg>
           </div>
           <div class="opt-body">
             <strong>Lote de 800 m²</strong>
-            <p>Espacio para tu casa, la de tu mamá y el patio donde tus hijos corran. La norma municipal lo exige así.</p>
-            <div class="opt-price">Desde ~$80M</div>
+            <p>Espacio para tu casa, la de tu mamá, un negocio y el patio donde tus hijos corran.</p>
+            <div class="opt-price">Desde ~$80M · Máximo espacio</div>
           </div>
           <div class="opt-check">✓</div>
         </label>
 
-        <!-- Vivienda Progresiva -->
-        <label class="opt-card opt-featured" data-val="vivienda_progresiva">
-          <input type="radio" name="tipo" value="vivienda_progresiva"/>
-          <div class="opt-badge-top">⭐ La más pedida</div>
+        <!-- 3. Casa 48m² en lote 200m² (Vivienda Progresiva) -->
+        <label class="opt-card" data-val="prog_200">
+          <input type="radio" name="tipo" value="prog_200"/>
           <div class="opt-visual">
             <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
               <rect x="4" y="4" width="232" height="142" rx="6" fill="#FDF3E7"/>
-              <!-- Etapa 1 -->
               <rect x="18" y="60" width="52" height="68" rx="3" fill="#fff" stroke="#C2610A" stroke-width="2"/>
               <polygon points="44,28 70,60 18,60" fill="#C2610A" opacity=".75"/>
               <rect x="26" y="78" width="10" height="10" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
               <rect x="47" y="78" width="10" height="10" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
               <rect x="32" y="92" width="14" height="36" rx="1" fill="#C2610A" opacity=".4"/>
               <text x="44" y="142" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#C2610A" font-family="sans-serif">48m² listo</text>
-              <!-- flecha 1 -->
-              <path d="M76 94 L96 94" stroke="#C2610A" stroke-width="2" marker-end="url(#a1)"/>
-              <defs><marker id="a1" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C2610A"/></marker></defs>
-              <!-- Etapa 2 -->
-              <rect x="100" y="50" width="52" height="78" rx="3" fill="#fff" stroke="#C2610A" stroke-width="2"/>
-              <rect x="100" y="50" width="52" height="28" rx="3" fill="#C2610A" opacity=".08" stroke="#C2610A" stroke-width="1" stroke-dasharray="3,2"/>
-              <polygon points="126,20 152,50 100,50" fill="#C2610A" opacity=".5"/>
-              <rect x="108" y="68" width="10" height="10" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
-              <rect x="130" y="68" width="10" height="10" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
-              <rect x="114" y="82" width="14" height="46" rx="1" fill="#C2610A" opacity=".35"/>
-              <text x="126" y="142" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#C2610A" font-family="sans-serif">+dormit.</text>
-              <!-- flecha 2 -->
-              <path d="M158 94 L178 94" stroke="#C2610A" stroke-width="2" marker-end="url(#a1)"/>
-              <!-- Etapa 3: 2 pisos -->
-              <rect x="182" y="30" width="50" height="98" rx="3" fill="#C2610A" opacity=".18" stroke="#C2610A" stroke-width="2"/>
-              <line x1="182" y1="75" x2="232" y2="75" stroke="#C2610A" stroke-width="1.5"/>
-              <rect x="189" y="36" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".9"/>
-              <rect x="205" y="36" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".9"/>
-              <rect x="189" y="80" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".9"/>
-              <rect x="205" y="80" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1" opacity=".9"/>
-              <rect x="196" y="93" width="16" height="35" rx="1" fill="#C2610A" opacity=".5"/>
-              <text x="207" y="142" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#C2610A" font-family="sans-serif">200m²</text>
+              <path d="M76 94 L96 94" stroke="#C2610A" stroke-width="2" marker-end="url(#ar1)"/>
+              <defs><marker id="ar1" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C2610A"/></marker></defs>
+              <rect x="100" y="30" width="52" height="98" rx="3" fill="#C2610A" opacity=".15" stroke="#C2610A" stroke-width="2"/>
+              <line x1="100" y1="74" x2="152" y2="74" stroke="#C2610A" stroke-width="1.5"/>
+              <rect x="108" y="37" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1"/>
+              <rect x="126" y="37" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1"/>
+              <rect x="108" y="80" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1"/>
+              <rect x="126" y="80" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1"/>
+              <rect x="114" y="95" width="14" height="33" rx="1" fill="#C2610A" opacity=".5"/>
+              <text x="126" y="142" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#C2610A" font-family="sans-serif">+2° piso</text>
+              <rect x="164" y="50" width="64" height="80" rx="3" fill="#C2610A" opacity=".05" stroke="#C2610A" stroke-width="1" stroke-dasharray="4,3"/>
+              <text x="196" y="91" text-anchor="middle" font-size="9" fill="#C2610A" font-family="sans-serif">Lote 200m²</text>
             </svg>
           </div>
           <div class="opt-body">
-            <strong>Vivienda Progresiva</strong>
-            <p><em>Empiezas a vivir ya. Cuando tengas más plata, construyes el 2° piso.</em> La estructura ya viene preparada. Sin demoler nada.</p>
-            <div class="opt-price">Desde $143M · Aplica subsidio ✓</div>
+            <strong>Casa 48m² · Lote 200m²</strong>
+            <p><em>Empiezas a vivir ya</em> en tu casa de 48m². Estructura incluida para crecer al 2° piso cuando quieras.</p>
+            <div class="opt-price">Desde $143.5M · Aplica subsidio hasta $52.5M ✓</div>
           </div>
           <div class="opt-check">✓</div>
         </label>
 
-        <!-- Casa Terminada -->
-        <label class="opt-card" data-val="casa_terminada">
-          <input type="radio" name="tipo" value="casa_terminada"/>
+        <!-- 4. Casa 56m² en lote 800m² (Vivienda Progresiva) -->
+        <label class="opt-card" data-val="prog_800">
+          <input type="radio" name="tipo" value="prog_800"/>
+          <div class="opt-visual">
+            <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="232" height="142" rx="6" fill="#FDF3E7"/>
+              <rect x="12" y="52" width="68" height="76" rx="3" fill="#fff" stroke="#C2610A" stroke-width="2"/>
+              <polygon points="46,20 80,52 12,52" fill="#C2610A" opacity=".7"/>
+              <rect x="20" y="72" width="12" height="12" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
+              <rect x="40" y="72" width="12" height="12" rx="1" fill="#C2610A" opacity=".3" stroke="#C2610A" stroke-width="1"/>
+              <rect x="28" y="88" width="16" height="40" rx="1" fill="#C2610A" opacity=".4"/>
+              <text x="46" y="142" text-anchor="middle" font-size="8" font-weight="bold" fill="#C2610A" font-family="sans-serif">56m² listo</text>
+              <path d="M86 90 L104 90" stroke="#C2610A" stroke-width="2" marker-end="url(#ar2)"/>
+              <defs><marker id="ar2" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C2610A"/></marker></defs>
+              <rect x="108" y="28" width="60" height="100" rx="3" fill="#C2610A" opacity=".18" stroke="#C2610A" stroke-width="2"/>
+              <line x1="108" y1="76" x2="168" y2="76" stroke="#C2610A" stroke-width="1.5"/>
+              <rect x="116" y="35" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1"/>
+              <rect x="134" y="35" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1"/>
+              <rect x="116" y="82" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1"/>
+              <rect x="134" y="82" width="10" height="10" rx="1" fill="#fff" stroke="#C2610A" stroke-width="1"/>
+              <rect x="122" y="96" width="16" height="32" rx="1" fill="#C2610A" opacity=".5"/>
+              <text x="138" y="142" text-anchor="middle" font-size="8" font-weight="bold" fill="#C2610A" font-family="sans-serif">+2° piso</text>
+              <!-- lote grande -->
+              <rect x="176" y="14" width="56" height="124" rx="3" fill="#8E4208" opacity=".07" stroke="#8E4208" stroke-width="1" stroke-dasharray="4,3"/>
+              <text x="204" y="72" text-anchor="middle" font-size="9" fill="#8E4208" font-family="sans-serif">Lote</text>
+              <text x="204" y="84" text-anchor="middle" font-size="9" fill="#8E4208" font-family="sans-serif">800m²</text>
+            </svg>
+          </div>
+          <div class="opt-body">
+            <strong>Casa 56m² · Lote 800m²</strong>
+            <p>Casa más grande desde el primer día + lote amplio. Creces al 2° piso y tienes patio para tu familia.</p>
+            <div class="opt-price">Desde ~$185M · Aplica subsidio hasta $52.5M ✓</div>
+          </div>
+          <div class="opt-check">✓</div>
+        </label>
+
+        <!-- 5. Vivienda 100% terminada -->
+        <label class="opt-card" data-val="terminada">
+          <input type="radio" name="tipo" value="terminada"/>
           <div class="opt-visual">
             <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
               <rect x="4" y="4" width="232" height="142" rx="6" fill="#FAF6F0" stroke="#1C3557" stroke-width="1.5"/>
-              <!-- fachada 2 pisos -->
               <rect x="32" y="42" width="176" height="96" rx="4" fill="#fff" stroke="#1C3557" stroke-width="1.5"/>
               <line x1="32" y1="90" x2="208" y2="90" stroke="#1C3557" stroke-width="1.5"/>
-              <!-- techo -->
               <polygon points="120,10 212,42 28,42" fill="#1C3557" opacity=".55"/>
-              <!-- ventanas piso 2 -->
               <rect x="48" y="54" width="26" height="22" rx="2" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="1"/>
               <rect x="90" y="54" width="26" height="22" rx="2" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="1"/>
               <rect x="132" y="54" width="26" height="22" rx="2" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="1"/>
               <rect x="174" y="54" width="22" height="22" rx="2" fill="#1C3557" opacity=".12" stroke="#1C3557" stroke-width="1"/>
-              <!-- ventanas piso 1 -->
               <rect x="48" y="98" width="26" height="22" rx="2" fill="#1C3557" opacity=".1" stroke="#1C3557" stroke-width="1"/>
               <rect x="90" y="98" width="26" height="22" rx="2" fill="#1C3557" opacity=".1" stroke="#1C3557" stroke-width="1"/>
-              <!-- puerta -->
               <rect x="140" y="97" width="30" height="41" rx="2" fill="#1C3557" opacity=".3"/>
               <rect x="178" y="98" width="22" height="22" rx="2" fill="#1C3557" opacity=".1" stroke="#1C3557" stroke-width="1"/>
-              <!-- label -->
+              <!-- badge llave en mano -->
               <rect x="56" y="128" width="128" height="16" rx="3" fill="#1C3557" opacity=".1"/>
-              <text x="120" y="140" text-anchor="middle" font-size="10" font-weight="bold" fill="#1C3557" font-family="sans-serif">Casa lista · 2 pisos · 3 hab.</text>
+              <text x="120" y="140" text-anchor="middle" font-size="10" font-weight="bold" fill="#1C3557" font-family="sans-serif">Llave en mano · 3 hab. · 2 baños</text>
             </svg>
           </div>
           <div class="opt-body">
-            <strong>Casa terminada</strong>
+            <strong>Vivienda 100% terminada</strong>
             <p>Llegas con tus maletas y ya. 3 habitaciones, 2 baños, todo listo. Nada que construir después.</p>
-            <div class="opt-price">Desde $220M</div>
+            <div class="opt-price">Desde $220M · Aplica subsidio ✓</div>
           </div>
           <div class="opt-check">✓</div>
         </label>
@@ -351,40 +365,62 @@
     <div class="survey-step" id="step3">
       <button class="btn-back" onclick="goStep(2)">← Volver</button>
       <div class="step-label"><span class="step-num">3</span> ¿A qué te dedicas?</div>
-      <p class="step-hint">Esto nos permite conectarte con los subsidios para los que sí clasificas.</p>
-      <div class="options-grid grid3">
-        <label class="opt-card opt-compact" data-val="empleado_oficial"><input type="radio" name="perfil" value="empleado_oficial"/>
-          <div class="opt-ico">🏛</div><strong>Empleado oficial</strong>
-          <p>Alcaldía, Gobernación, colegio o hospital público</p><div class="opt-check">✓</div>
-        </label>
-        <label class="opt-card opt-compact" data-val="empleado_empresa"><input type="radio" name="perfil" value="empleado_empresa"/>
-          <div class="opt-ico">💼</div><strong>Empleado empresa privada</strong>
-          <p>Contrato y pago de caja de compensación</p><div class="opt-check">✓</div>
-        </label>
-        <label class="opt-card opt-compact" data-val="independiente"><input type="radio" name="perfil" value="independiente"/>
-          <div class="opt-ico">🛒</div><strong>Independiente</strong>
+      <p class="step-hint">Así conectamos tu perfil con los subsidios y planes de pago que sí te aplican.</p>
+      <div class="options-grid">
+        <label class="opt-card opt-compact" data-val="vendedor"><input type="radio" name="perfil" value="vendedor"/>
+          <div class="opt-ico">🛒</div><strong>Vendedor / Independiente</strong>
           <p>Tendero, vendedor, trabajo por cuenta propia</p><div class="opt-check">✓</div>
         </label>
         <label class="opt-card opt-compact" data-val="mototaxista"><input type="radio" name="perfil" value="mototaxista"/>
-          <div class="opt-ico">🏍</div><strong>Mototaxista / Transporte</strong>
-          <p>Ingresos informales pero constantes</p><div class="opt-check">✓</div>
+          <div class="opt-ico">🏍</div><strong>Mototaxista</strong>
+          <p>Transporte informal con ingresos constantes</p><div class="opt-check">✓</div>
         </label>
         <label class="opt-card opt-compact" data-val="madre_cabeza"><input type="radio" name="perfil" value="madre_cabeza"/>
-          <div class="opt-ico">👩‍👧</div><strong>Cabeza de hogar</strong>
-          <p>Responsable único de mi familia</p><div class="opt-check">✓</div>
+          <div class="opt-ico">👩‍👧</div><strong>Madre cabeza de familia</strong>
+          <p>Responsable del hogar, con prioridad en subsidios</p><div class="opt-check">✓</div>
         </label>
-        <label class="opt-card opt-compact" data-val="otro"><input type="radio" name="perfil" value="otro"/>
-          <div class="opt-ico">✨</div><strong>Otro</strong>
-          <p>Pensionado, estudiante, inversión…</p><div class="opt-check">✓</div>
+        <label class="opt-card opt-compact" data-val="empleado_oficial"><input type="radio" name="perfil" value="empleado_oficial"/>
+          <div class="opt-ico">🏛</div><strong>Empleado Oficial</strong>
+          <p>Alcaldía, Gobernación, hospital o colegio público</p><div class="opt-check">✓</div>
         </label>
       </div>
       <button class="btn-next" id="btn3" disabled onclick="goStep(4)">Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
 
-    <!-- PASO 4 -->
+    <!-- PASO 4 — ¿Cómo quieres pagar? -->
     <div class="survey-step" id="step4">
       <button class="btn-back" onclick="goStep(3)">← Volver</button>
-      <div class="step-label"><span class="step-num">4</span> Dos datos más</div>
+      <div class="step-label"><span class="step-num">4</span> ¿Cómo te gustaría pagarlo?</div>
+      <p class="step-hint">Así diseñamos el plan financiero que mejor se adapte a tu forma de trabajar.</p>
+      <div class="opts-list">
+        <label class="opt-li" data-val="ahorro_mensual"><input type="radio" name="forma_pago" value="ahorro_mensual"/>
+          <div class="oli-ico">💰</div>
+          <div class="oli-b"><strong>Ahorro programado mensual</strong><p>Guardo una parte de mi salario cada mes hasta completar la cuota inicial.</p></div>
+          <div class="oli-ck">✓</div>
+        </label>
+        <label class="opt-li" data-val="cuotas_periodicas"><input type="radio" name="forma_pago" value="cuotas_periodicas"/>
+          <div class="oli-ico">📅</div>
+          <div class="oli-b"><strong>Cuotas semanales o quincenales</strong><p>Pago una cantidad fija cada semana o quincena, al ritmo de mis ingresos.</p></div>
+          <div class="oli-ck">✓</div>
+        </label>
+        <label class="opt-li" data-val="subsidio_credito"><input type="radio" name="forma_pago" value="subsidio_credito"/>
+          <div class="oli-ico">🏦</div>
+          <div class="oli-b"><strong>Subsidio del gobierno + crédito bancario</strong><p>Quiero usar el subsidio Mi Casa Ya y financiar el resto con un banco.</p></div>
+          <div class="oli-ck">✓</div>
+        </label>
+        <label class="opt-li" data-val="contado"><input type="radio" name="forma_pago" value="contado"/>
+          <div class="oli-ico">💵</div>
+          <div class="oli-b"><strong>De contado</strong><p>Tengo o puedo reunir el valor total sin necesitar crédito bancario.</p></div>
+          <div class="oli-ck">✓</div>
+        </label>
+      </div>
+      <button class="btn-next" id="btn4" disabled onclick="goStep(5)">Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+
+    <!-- PASO 5 — Dos datos más -->
+    <div class="survey-step" id="step5">
+      <button class="btn-back" onclick="goStep(4)">← Volver</button>
+      <div class="step-label"><span class="step-num">5</span> Dos datos más</div>
       <div class="mini-form">
         <div class="mini-f">
           <label>¿En qué municipio buscas?</label>
@@ -414,20 +450,20 @@
           </div>
         </div>
       </div>
-      <button class="btn-next" id="btn4" onclick="goStep(5)">Registrarme y recibir mi bono <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      <button class="btn-next" id="btn5" onclick="goStep(6)">Registrarme y recibir mi bono <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
 
-    <!-- PASO 5 -->
-    <div class="survey-step" id="step5">
-      <button class="btn-back" onclick="goStep(4)">← Volver</button>
+    <!-- PASO 6 — Formulario -->
+    <div class="survey-step" id="step6">
+      <button class="btn-back" onclick="goStep(5)">← Volver</button>
       <div class="founder-card">
         <div class="fc-badge">🎁 Bono Fundador — $500.000</div>
         <h3>¡Ya casi está!</h3>
         <p>Los primeros <strong>100 registrados</strong> reciben un bono de <strong>$500.000</strong> que se descuenta de la cuota inicial cuando el proyecto abra.</p>
         <div class="fc-perks">
-          <span>🥇 Primero en elegir lote o casa</span>
+          <span>🥇 Primero en elegir tu opción favorita</span>
           <span>💰 $500.000 descontados de tu cuota</span>
-          <span>📲 Tips diarios en Telegram</span>
+          <span>🤖 Asesor 24/7 en Telegram</span>
           <span>📊 Resultados de esta encuesta</span>
         </div>
       </div>
@@ -437,8 +473,9 @@
         <input type="hidden" name="tipo" id="h_tipo"/>
         <input type="hidden" name="pago" id="h_pago"/>
         <input type="hidden" name="perfil" id="h_perfil"/>
+        <input type="hidden" name="forma_pago" id="h_forma_pago"/>
         <input type="hidden" name="ciudad" id="h_ciudad"/>
-        <input type="hidden" name="subsidio_interes" id="h_subsidio"/>
+        <input type="hidden" name="subsidio_interes" id="h_subsidio_interes"/>
         <input type="hidden" name="origen" id="h_origen"/>
         <div class="f-group">
           <label for="nombre">Nombre completo *</label>
@@ -462,29 +499,35 @@
       </form>
     </div>
 
-    <!-- PASO 6 ÉXITO -->
-    <div class="survey-step success-step" id="step6">
+    <!-- PASO 7 — ÉXITO + Cierre Dual -->
+    <div class="survey-step success-step" id="step7">
       <div class="success-ico">🎉</div>
-      <h2>¡Ya eres Fundador!</h2>
-      <p>Quedaste registrado. Te contactamos cuando abramos con tu <strong>bono de $500.000</strong> listo para aplicar.</p>
+      <h2>¡Ya eres parte del barrio!</h2>
+      <p>Quedaste registrado. Tus respuestas nos ayudan a diseñar exactamente lo que la comunidad necesita.</p>
       <div class="success-box">
-        <p><strong>Mientras tanto únete a Telegram:</strong></p>
+        <p><strong>¿Qué quieres hacer ahora?</strong></p>
         <ul>
-          <li>📌 Tip diario de subsidios y ahorro</li>
-          <li>📊 Resultados de esta encuesta</li>
-          <li>🔔 Aviso el día que abramos</li>
+          <li>💬 Habla con un asesor humano por WhatsApp</li>
+          <li>🤖 Consulta dudas al instante con el Bot de Telegram</li>
+          <li>🔔 Recibe aviso el día que abramos</li>
         </ul>
-        <a href="https://t.me/TU_CANAL_AQUI" target="_blank" rel="noopener" class="btn-tg-big">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
-          Unirme al canal
-        </a>
-        <button class="btn-share" id="btnShare">📤 Compartir con un amigo</button>
+        <div class="success-ctas">
+          <a href="https://wa.me/" id="btnWA" target="_blank" rel="noopener" class="btn-wa-big">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Hablar con asesor humano
+          </a>
+          <a href="https://t.me/TU_BOT_AQUI" target="_blank" rel="noopener" class="btn-tg-big">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.25-2.03 9.57c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L6.29 13.69l-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.2 1 .13.52.9z"/></svg>
+            Consultar al instante — Bot Telegram
+          </a>
+        </div>
+        <button class="btn-share" id="btnShare" style="margin-top:.5rem">📤 Compartir con un amigo</button>
       </div>
     </div>
 
     <div class="progress-bar-wrap" id="progressWrap">
       <div class="pb-track"><div class="pb-fill" id="pbFill"></div></div>
-      <span class="pb-label" id="pbLabel">Paso 1 de 5</span>
+      <span class="pb-label" id="pbLabel">Paso 1 de 6</span>
     </div>
   </div>
 </section>

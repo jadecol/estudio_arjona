@@ -1,10 +1,55 @@
-// survey.js v3 — Encuesta de validación + captura de leads
+// survey.js v5 — Co-creación + 4 perfiles + forma de pago + cierre dual Telegram/WA
 (function () {
   'use strict';
 
-  const answers = { tipo:'', pago:'', perfil:'', ciudad:'', subsidio_interes:'', origen:'' };
-  const TOTAL = 5;
+  const answers = {
+    tipo: '', pago: '', perfil: '', forma_pago: '',
+    ciudad: '', subsidio_interes: '', origen: '',
+  };
+  const TOTAL = 6; // 6 pasos visibles; paso 7 = éxito
 
+  // ── Catálogo de productos ─────────────────────────────────────────────────
+  const PRODUCTOS = {
+    lote_200: { label: 'Lote de 200 m²',                         precio: '$22.000.000',   subsidio: false, emoji: '🟫' },
+    lote_800: { label: 'Lote de 800 m²',                         precio: '$80.000.000',   subsidio: false, emoji: '🟧' },
+    prog_200: { label: 'Casa 48m² en lote 200m² (Progresiva)',   precio: '$143.574.210',  subsidio: true,  emoji: '🏗️' },
+    prog_800: { label: 'Casa 56m² en lote 800m² (Progresiva)',   precio: '$185.000.000',  subsidio: true,  emoji: '🏠' },
+    terminada:{ label: 'Vivienda 100% terminada',                precio: '$220.000.000',  subsidio: true,  emoji: '🏡' },
+  };
+
+  // ── Labels legibles ───────────────────────────────────────────────────────
+  const PAGO_LABELS = {
+    menos300:  'Menos de $300.000/mes',
+    '300_600': '$300.000 – $600.000/mes',
+    '600_1000':'$600.000 – $1.000.000/mes',
+    mas1000:   'Más de $1.000.000/mes',
+  };
+  const PERFIL_LABELS = {
+    vendedor:         'Vendedor / Independiente',
+    mototaxista:      'Mototaxista',
+    madre_cabeza:     'Madre cabeza de familia',
+    empleado_oficial: 'Empleado Oficial (Alcaldía / Gobernación / Hospital)',
+  };
+  const FORMA_PAGO_LABELS = {
+    ahorro_mensual:   'Ahorro programado mensual',
+    cuotas_periodicas:'Cuotas semanales o quincenales',
+    subsidio_credito: 'Subsidio del gobierno + crédito bancario',
+    contado:          'De contado',
+  };
+  const SUBSIDIO_LABELS = {
+    si:       'Sí, le interesa',
+    aprender: 'Quiere aprender cómo',
+    no:       'No le interesa',
+  };
+  const ORIGEN_LABELS = {
+    alcaldia:  'Alcaldía',
+    educacion: 'Sec. Educación',
+    redes:     'Redes sociales',
+    amigo:     'Un amigo',
+    telegram:  'Telegram',
+  };
+
+  // ── Navegación entre pasos ────────────────────────────────────────────────
   window.goStep = function (n) {
     document.querySelectorAll('.survey-step').forEach(s => s.classList.remove('active'));
     const next = document.getElementById('step' + n);
@@ -16,8 +61,8 @@
       window.scrollTo({ top, behavior: 'smooth' });
     }
     updateProgress(n);
-    if (n === 5) syncHidden();
-    if (n === 6) updateCounter();
+    if (n === 6) syncHidden(); // paso 6 = formulario
+    if (n === 7) updateCounter();
   };
 
   function updateProgress(step) {
@@ -25,7 +70,7 @@
     const label = document.getElementById('pbLabel');
     const wrap  = document.getElementById('progressWrap');
     if (!fill || !label) return;
-    if (step >= 6) { if (wrap) wrap.style.display = 'none'; return; }
+    if (step >= 7) { if (wrap) wrap.style.display = 'none'; return; }
     fill.style.width = Math.round((step / TOTAL) * 100) + '%';
     label.textContent = 'Paso ' + step + ' de ' + TOTAL;
   }
@@ -37,6 +82,7 @@
     });
   }
 
+  // ── Binding de tarjetas ───────────────────────────────────────────────────
   function bindCards(stepId, name, btnId) {
     const step = document.getElementById(stepId);
     if (!step) return;
@@ -65,6 +111,7 @@
     });
   }
 
+  // ── Contador de fundadores ────────────────────────────────────────────────
   function initCounter() {
     const base = 48 + Math.floor(Math.random() * 9);
     setCounter(base);
@@ -85,12 +132,13 @@
     setCounter(Math.min(cur + 1, 100));
   }
 
+  // ── Envío del formulario ──────────────────────────────────────────────────
   async function handleSubmit(e) {
     e.preventDefault();
-    const form = e.target;
-    const btnT = form.querySelector('.btn-text');
-    const btnL = form.querySelector('.btn-loading');
-    const btn  = document.getElementById('btnSubmit');
+    const form   = e.target;
+    const btnT   = form.querySelector('.btn-text');
+    const btnL   = form.querySelector('.btn-loading');
+    const btn    = document.getElementById('btnSubmit');
     const nombre   = form.nombre.value.trim();
     const telefono = form.telefono.value.trim();
     if (!nombre || !telefono) return;
@@ -101,9 +149,14 @@
     const payload = new URLSearchParams({
       'form-name': 'contacto', nombre, telefono,
       correo: form.correo?.value.trim() || '',
-      tipo: answers.tipo, pago: answers.pago, perfil: answers.perfil,
-      ciudad: answers.ciudad, subsidio_interes: answers.subsidio_interes,
-      origen: answers.origen, fecha: new Date().toISOString(),
+      tipo:             answers.tipo,
+      pago:             answers.pago,
+      perfil:           answers.perfil,
+      forma_pago:       answers.forma_pago,
+      ciudad:           answers.ciudad,
+      subsidio_interes: answers.subsidio_interes,
+      origen:           answers.origen,
+      fecha:            new Date().toISOString(),
     });
 
     try {
@@ -114,24 +167,47 @@
       });
     } catch (_) {}
 
-    // WhatsApp — pon tu número aquí: '573XXXXXXXXX'
-    const WA = '';
-    if (WA) {
-      const tipoLabel = {
-        lote_200:'Lote 200m²', lote_800:'Lote 800m²',
-        vivienda_progresiva:'Vivienda Progresiva', casa_terminada:'Casa Terminada',
-      }[answers.tipo] || answers.tipo;
-      const msg = encodeURIComponent(
-        `🏠 *Nuevo Fundador*\nNombre: ${nombre}\nTel: ${telefono}\n` +
-        `Interés: ${tipoLabel}\nCapacidad: ${answers.pago}\n` +
-        `Perfil: ${answers.perfil}\nCiudad: ${answers.ciudad}\n` +
-        `Subsidio: ${answers.subsidio_interes}\nOrigen: ${answers.origen}`
-      );
-      setTimeout(() => window.open(`https://wa.me/${WA}?text=${msg}`, '_blank'), 1800);
+    // ── Construir mensaje WA enriquecido ────────────────────────────────────
+    const WA = ''; // ← pon tu número aquí: '573XXXXXXXXX'
+
+    const prod    = PRODUCTOS[answers.tipo] || {};
+    const emoji   = prod.emoji  || '🏠';
+    const label   = prod.label  || answers.tipo;
+    const precio  = prod.precio || '—';
+    const subText = prod.subsidio ? '✅ Sí aplica' : '❌ No aplica';
+
+    const fecha = new Date().toLocaleString('es-CO', {
+      dateStyle: 'short', timeStyle: 'short', timeZone: 'America/Bogota',
+    });
+
+    const waMsg = encodeURIComponent(
+      `🏗️ *Nuevo participante — Barrio Arjona*\n\n` +
+      `👤 Nombre: ${nombre}\n` +
+      `📞 WhatsApp: ${telefono}\n\n` +
+      `${emoji} *Opción de interés:*\n` +
+      `   ${label}\n` +
+      `💰 Precio ref: ${precio}\n` +
+      `🎁 Subsidio aplica: ${subText}\n\n` +
+      `💵 Capacidad de pago: ${PAGO_LABELS[answers.pago] || answers.pago || '—'}\n` +
+      `👷 Perfil: ${PERFIL_LABELS[answers.perfil] || answers.perfil || '—'}\n` +
+      `💳 Forma de pago preferida: ${FORMA_PAGO_LABELS[answers.forma_pago] || answers.forma_pago || '—'}\n` +
+      `📍 Ciudad buscada: ${answers.ciudad || '—'}\n` +
+      `🎯 Interés en subsidio: ${SUBSIDIO_LABELS[answers.subsidio_interes] || answers.subsidio_interes || '—'}\n` +
+      `📣 Cómo llegó: ${ORIGEN_LABELS[answers.origen] || answers.origen || '—'}\n\n` +
+      `🕐 ${fecha}`
+    );
+
+    // Actualizar botón WA del paso de éxito con el mensaje pre-llenado
+    const btnWA = document.getElementById('btnWA');
+    if (btnWA) {
+      const waBase = WA ? `https://wa.me/${WA}` : 'https://wa.me/';
+      btnWA.href = `${waBase}?text=${waMsg}`;
     }
-    goStep(6);
+
+    goStep(7);
   }
 
+  // ── Animaciones de scroll ─────────────────────────────────────────────────
   function initScrollAnim() {
     if (!window.IntersectionObserver) return;
     const targets = document.querySelectorAll('.tip-card,.stage-vd,.opt-card,.opt-li,.calc-card');
@@ -165,12 +241,12 @@
   function initShare() {
     document.getElementById('btnShare')?.addEventListener('click', () => {
       const url  = window.location.origin + window.location.pathname;
-      const text = '¿Buscas casa o lote en Arjona? Regístrate gratis y recibe un bono de $500.000 👇';
+      const text = '¿Buscas casa o lote en Arjona? Participa gratis en el diseño del nuevo barrio 👇';
       if (navigator.share) {
-        navigator.share({ title: 'Proyecto Arjona', text, url }).catch(() => {});
+        navigator.share({ title: 'Barrio Arjona — Co-creación', text, url }).catch(() => {});
       } else {
         navigator.clipboard?.writeText(url)
-          .then(() => alert('¡Enlace copiado! Compártelo por WhatsApp.'))
+          .then(() => alert('¡Enlace copiado! Compártelo por WhatsApp o Telegram.'))
           .catch(() => prompt('Copia este enlace:', url));
       }
     });
@@ -188,10 +264,12 @@
     }, 700);
   }
 
+  // ── Init ──────────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
-    bindCards('step1', 'tipo',   'btn1');
-    bindCards('step2', 'pago',   'btn2');
-    bindCards('step3', 'perfil', 'btn3');
+    bindCards('step1', 'tipo',       'btn1');
+    bindCards('step2', 'pago',       'btn2');
+    bindCards('step3', 'perfil',     'btn3');
+    bindCards('step4', 'forma_pago', 'btn4');
     bindTags('ciudad');
     bindTags('subsidio_interes');
     bindTags('origen');

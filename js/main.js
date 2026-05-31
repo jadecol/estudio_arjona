@@ -52,17 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.style.display = 'none';
     success.style.display = 'block';
-
-    // También intentar abrir WhatsApp si hay número configurado
-    const WA_NUMBER = ''; // Llena esto con el número: '573XXXXXXXXX'
-    if (WA_NUMBER) {
-      const msg = encodeURIComponent(
-        `Hola, me registré en ArjonaProgresiva. Soy ${data.nombre}, interesado en ${data.producto || 'información general'} en ${data.ciudad}.`
-      );
-      setTimeout(() => {
-        window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank');
-      }, 1200);
-    }
+    // Nota: el envío por WhatsApp está centralizado en survey.js → handleSubmit
   });
 
   // ── Intersection Observer — animaciones al hacer scroll ─
